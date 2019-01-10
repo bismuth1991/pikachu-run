@@ -1,3 +1,5 @@
+import { GRAVITY } from './constant';
+
 class Physics {
   constructor(x, y) {
     this.x = x;
@@ -18,7 +20,12 @@ class Physics {
 
   updatePos() {
     this.x += this.dX();
-    this.y += this.dY();
+
+    if (this.y + this.dY() - GRAVITY <= 0) {
+      this.y = 0;
+    } else {
+      this.y += this.dY() - GRAVITY;
+    }
   }
 }
 
