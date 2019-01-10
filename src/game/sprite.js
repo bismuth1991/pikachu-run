@@ -7,7 +7,6 @@ class Sprite {
     this.currentFrame = 0;
     this.isMoveLeft = false;
     this.isMove = false;
-    this.isTeleport = false;
   }
 
   srcX() {

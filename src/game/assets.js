@@ -1,13 +1,8 @@
 import Pikachu from './pikachu';
 import Physics from './physics';
 
-const background = require('../assets/images/background.png');
+export const pikachu = new Pikachu(new Physics(0, 348));
 
-const pikachu = Pikachu.new(Physics(0, 0));
-
-const assets = {
-  background,
+export const assetsArray = [
   pikachu,
-};
-
-export default assets;
+];

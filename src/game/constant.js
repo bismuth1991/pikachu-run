@@ -1,2 +1,2 @@
-export const GRAVITY = 1;
-export const BASE_Y = 348;
+export const gravity = 5;
+export const baseY = 348;
