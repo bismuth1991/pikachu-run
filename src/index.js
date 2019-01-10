@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const canvas = document.querySelector('canvas');
   const ctx = canvas.getContext('2d');
   canvas.width = 800;
-  canvas.height = 400;
+  canvas.height = 500;
 
   const game = new GameCanvas(canvas, ctx);
 

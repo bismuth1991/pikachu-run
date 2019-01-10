@@ -4,3 +4,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.canvas-container canvas {
+  background-image: url('../images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

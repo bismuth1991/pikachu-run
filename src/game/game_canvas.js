@@ -27,7 +27,7 @@ class GameCanvas {
 
       this.ctx.drawImage(
         sprite.image, sprite.srcX(), sprite.srcY(), sprite.width, sprite.height,
-        20 - this.totalOffsetX, 20 - this.totalOffsetY, sprite.width, sprite.height,
+        50 - this.totalOffsetX, 348 - this.totalOffsetY, sprite.width, sprite.height,
       );
     } else {
       this.ctx.drawImage(
