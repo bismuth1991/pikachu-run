@@ -1,4 +1,4 @@
-import Game from './game/game_canvas';
+import GameCanvas from './game/game_canvas';
 
 window.addEventListener('DOMContentLoaded', () => {
   const canvas = document.querySelector('canvas');
@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
   canvas.width = 800;
   canvas.height = 400;
 
-  const game = new Game(canvas, ctx);
+  const game = new GameCanvas(canvas, ctx);
 
   game.draw(10);
 });
