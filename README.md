@@ -1,6 +1,14 @@
 # Pikachu RUN
 
 A clone of Google Chrome dinosaur game but with different sprites and more interactivity
+  + Obstacles
+    + cacti, birds will be replaced my animated pokemon sprites
+    + There will be Team Rocket flying on a Meowth balloon on the top right of the screen, shooting bouncing bubbles down
+  + Interactivity
+    + pikachu can run forward, jump, roll backwards
+    + pikachu can use skill 'thundershock' to either: remove a bubble or flying obstabcle from the screen
+    + I'll think of another skill and implement it during the project
+    + Skills will have cooldown
 
 ## MVPs
 + Main page looks asthetically pleasing
@@ -12,24 +20,16 @@ A clone of Google Chrome dinosaur game but with different sprites and more inter
 + Scoreboard
 + Production README
 + BONUS:
+  + Write tests
   + implement AI using machine learning and neural network
 
-## External APIs usage and justifications
-+ Redux (no React)
-  + everyone is using OOP/Class + Canvas to write game. I would like to make myself standout by implementing Redux + Canvas instead
-  + Easier to manage and test
-+ [Redux-saga](https://redux-saga.js.org/)
-  + To handle game setup phase and side-effects
-  + chance to practice using [ES6 generator functions](https://davidwalsh.name/es6-generators) which I think are very cool
-
 ## Workflow
-+ Day 0
-  + Work on draft proposal
 + Day 1
   + HTML & CSS
   + Decide on a background for the game
   + Style the main page
   + Integrate pokemon audio tracks (with mute button)
+  + Prepare the sprites for obstacle
 + Day 2
   + Render Pikachu sprite with animation
   + Basic movements
