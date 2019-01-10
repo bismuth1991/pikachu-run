@@ -29,7 +29,7 @@ A clone of Google Chrome dinosaur game but with different sprites and more inter
   + Decide on a background for the game
   + Style the main page
   + Integrate pokemon audio tracks (with mute button)
-  + Prepare the sprites for obstacle
+  + Prepare the sprites for pikachu & obstacle
 + Day 2
   + Render Pikachu sprite with animation
   + Basic movements
