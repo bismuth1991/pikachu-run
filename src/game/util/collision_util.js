@@ -45,6 +45,6 @@ const distanceBetweenCircles = (circle1, circle2) => {
   return Math.sqrt((distX ** 2) + (distY ** 2));
 };
 
-export const isCollided = (circle1, circle2) => (
+export const isCCCollided = (circle1, circle2) => (
   distanceBetweenCircles(circle1, circle2) - circle1.radius - circle2.radius <= 0
 );
