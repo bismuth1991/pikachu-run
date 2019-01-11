@@ -1,9 +1,9 @@
-import Sprite from './sprite';
+import Sprite from '../sprite';
 
-const pikachuStaticSpriteSheet = require('../assets/images/pikachu-standing.png');
-const pikachuRunRightSpriteSheet = require('../assets/images/pikachu-running-right.png');
-const pikachuRunLeftSpriteSheet = require('../assets/images/pikachu-running-left.png');
-const pikachuRollSpriteSheet = require('../assets/images/pikachu-rolling.png');
+const pikachuStaticSpriteSheet = require('../../assets/images/pikachu-standing.png');
+const pikachuRunRightSpriteSheet = require('../../assets/images/pikachu-running-right.png');
+const pikachuRunLeftSpriteSheet = require('../../assets/images/pikachu-running-left.png');
+const pikachuRollSpriteSheet = require('../../assets/images/pikachu-rolling.png');
 
 const pikachuStatic = new Image();
 pikachuStatic.src = pikachuStaticSpriteSheet;

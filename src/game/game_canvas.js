@@ -1,4 +1,4 @@
-import Pikachu from './pikachu';
+import Pikachu from './pikachu/pikachu';
 
 class GameCanvas {
   constructor(canvas, ctx, assetsArray) {

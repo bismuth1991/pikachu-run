@@ -1,5 +1,5 @@
 import GameCanvas from './game/game_canvas';
-import setupControlListeners from './game/pikachu_controls';
+import setupControlListeners from './game/pikachu/pikachu_controls';
 import { assetsArray } from './game/assets';
 
 import './assets/css/normalize_8_0_1.css';
