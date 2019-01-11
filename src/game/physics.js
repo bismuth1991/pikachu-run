@@ -4,6 +4,7 @@ class Physics {
   constructor(x, y) {
     this.x = x;
     this.y = y;
+    this.mass = 1;
     this.dLeft = 0;
     this.dRight = 0;
     this.dUp = 0;
