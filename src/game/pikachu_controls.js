@@ -14,7 +14,7 @@ const setupControlListeners = (game) => {
       physics.isRun = true;
 
       physics.isRunLeft = false;
-      physics.dRight = 10;
+      physics.dRight = 20;
     }
     if (key === 'a') {
       if (physics.iskeyPress) return;
@@ -22,7 +22,7 @@ const setupControlListeners = (game) => {
 
       physics.isRun = true;
       physics.isRunLeft = true;
-      physics.dLeft = 10;
+      physics.dLeft = 20;
     }
   });
 

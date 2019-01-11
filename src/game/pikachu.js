@@ -28,14 +28,30 @@ class Pikachu {
     this.sprite = new Sprite(pikachuStatic, 96, 161, 2, 4);
   }
 
+  isJump() {
+    return this.physics.isJump;
+  }
+
+  isRunRight() {
+    return this.physics.isRun && !this.physics.isRunLeft && !this.physics.isJump;
+  }
+
+  isRunLeft() {
+    return this.physics.isRun && this.physics.isRunLeft && !this.physics.isJump;
+  }
+
+  isStatic() {
+    return this.physics.dX() === 0 && this.physics.dY() === 0;
+  }
+
   updateSprite() {
-    if (this.physics.isJump) {
+    if (this.isJump()) {
       this.sprite = pikachuRollSprite;
-    } else if (this.physics.isRun && !this.physics.isRunLeft && !this.physics.isJump) {
+    } else if (this.isRunRight()) {
       this.sprite = pikachuRunRightSprite;
-    } else if (this.physics.isRun && this.physics.isRunLeft && !this.physics.isJump) {
+    } else if (this.isRunLeft()) {
       this.sprite = pikachuRunLeftSprite;
-    } else if (this.physics.dX() === 0 && this.physics.dY() === 0) {
+    } else if (this.isStatic()) {
       this.sprite = pikachuStaticSprite;
     }
   }

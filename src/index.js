@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   canvas.height = 500;
 
   const game = new GameCanvas(canvas, ctx, assetsArray);
-  game.draw(10);
+  game.draw(12);
 
   setupControlListeners(game);
 });
