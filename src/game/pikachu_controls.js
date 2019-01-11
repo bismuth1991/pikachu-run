@@ -1,29 +1,45 @@
 const setupControlListeners = (game) => {
   window.addEventListener('keydown', ({ key, repeat }) => {
     if (repeat) return;
-    console.log('im here');
 
-    const { physics, sprite } = game.assets[0];
+    const pikachu = game.assets[0];
+    const { physics } = pikachu;
     if (key === 'w') {
-      // sprite.isMove = true;
+      physics.isJump = true;
       physics.dUp = 50;
     }
     if (key === 'd') {
-      // sprite.isMove = true;
+      if (physics.iskeyPress) return;
+      physics.iskeyPress = true;
+      physics.isRun = true;
+
+      physics.isRunLeft = false;
       physics.dRight = 10;
+    }
+    if (key === 'a') {
+      if (physics.iskeyPress) return;
+      physics.iskeyPress = true;
+
+      physics.isRun = true;
+      physics.isRunLeft = true;
+      physics.dLeft = 10;
     }
   });
 
-  window.addEventListener('keyup', ({ key, repeat }) => {
-    const { physics, sprite } = game.assets[0];
+  window.addEventListener('keyup', ({ key }) => {
+    const { physics } = game.assets[0];
 
-    // if (key === 'w') {
-    // sprite.isMove = true;
-    // physics.dUp = 0;
-    // }
     if (key === 'd') {
-      // sprite.isMove = true;
+      physics.iskeyPress = false;
+
+      physics.isRun = false;
       physics.dRight = 0;
+    }
+    if (key === 'a') {
+      physics.iskeyPress = false;
+
+      physics.isRun = false;
+      physics.dLeft = 0;
     }
   });
 };

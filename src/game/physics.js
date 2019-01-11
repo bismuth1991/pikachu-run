@@ -8,6 +8,10 @@ class Physics {
     this.dRight = 0;
     this.dUp = 0;
     this.dDown = 0;
+    this.isJump = false;
+    this.isRun = false;
+    this.isRunLeft = false;
+    this.isKeyPress = false;
   }
 
   dX() {
@@ -29,6 +33,7 @@ class Physics {
     if (this.y + this.dY() + gravity > baseY) {
       this.y = baseY;
       this.dDown = 0;
+      this.isJump = false;
     } else {
       this.y += this.dY();
     }
