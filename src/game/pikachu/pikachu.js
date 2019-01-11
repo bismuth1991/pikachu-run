@@ -18,8 +18,8 @@ const pikachuRoll = new Image();
 pikachuRoll.src = pikachuRollSpriteSheet;
 
 const pikachuStaticSprite = new Sprite(pikachuStatic, 96, 161, 2, 4);
-const pikachuRunRightSprite = new Sprite(pikachuRunRight, 96, 240, 1, 4);
-const pikachuRunLeftSprite = new Sprite(pikachuRunLeft, 96, 240, 1, 4);
+const pikachuRunRightSprite = new Sprite(pikachuRunRight, 48, 240, 1, 4);
+const pikachuRunLeftSprite = new Sprite(pikachuRunLeft, 48, 240, 1, 4);
 const pikachuRollSprite = new Sprite(pikachuRoll, 96, 192, 2, 4);
 
 class Pikachu {
