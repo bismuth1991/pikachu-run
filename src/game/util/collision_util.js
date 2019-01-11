@@ -36,3 +36,15 @@ export const isRCCollided = (rect, circle) => {
   const dy = distY - rect.sprite.height / 2;
   return (dx * dx + dy * dy <= (circle.physics.radius * circle.physics.radius));
 };
+
+// circle to circle collision
+const distanceBetweenCircles = (circle1, circle2) => {
+  const distX = circle2.physics.x - circle1.physics.x;
+  const distY = circle2.physics.y - circle1.physics.y;
+
+  return Math.sqrt((distX ** 2) + (distY ** 2));
+};
+
+export const isCollided = (circle1, circle2) => (
+  distanceBetweenCircles(circle1, circle2) - circle1.radius - circle2.radius <= 0
+);
