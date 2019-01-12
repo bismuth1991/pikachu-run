@@ -1,4 +1,6 @@
 import Physics from '../physics';
+import { BASE_Y, PIKACHU_MASS } from '../constant';
+
 import {
   pikachuRollSprite,
   pikachuStaticSprite,
@@ -7,7 +9,7 @@ import {
 
 class Pikachu {
   constructor() {
-    this.physics = new Physics(0, 348);
+    this.physics = new Physics(0, BASE_Y, PIKACHU_MASS);
     this.sprite = pikachuStaticSprite;
     this.isADPress = false;
     this.isLeft = false;

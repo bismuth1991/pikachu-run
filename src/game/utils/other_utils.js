@@ -12,7 +12,7 @@ export const randomFromRange = (min, max) => Math.floor(Math.random() * (max - m
 export const randomColor = colors => colors[Math.floor(Math.random() * colors.length)];
 
 export const randomPhysics = () => (
-  new Physics(randomFromRange(0, CANVAS_HEIGHT), randomFromRange(0, CANVAS_WIDTH))
+  new Physics(randomFromRange(0, CANVAS_HEIGHT), randomFromRange(0, CANVAS_WIDTH), 0)
 );
 export const randomRotation = () => Math.floor(Math.random() * (2 * MAX_ROTATION)) - MAX_ROTATION;
 export const randomRadius = () => randomFromRange(MIN_RADIUS, MAX_RADIUS);

@@ -8,10 +8,15 @@ class GameCanvas {
   drawAsset(asset) {
     const { physics, sprite } = asset;
 
+    this.ctx.save();
+    this.ctx.translate(physics.x, physics.y);
+
     this.ctx.drawImage(
       sprite.image, sprite.srcX(), sprite.srcY(), sprite.width, sprite.height,
-      physics.x, physics.y, sprite.width, sprite.height,
+      0, 0, sprite.width, sprite.height,
     );
+
+    this.ctx.restore();
 
     physics.updatePos();
     sprite.updateFrame();

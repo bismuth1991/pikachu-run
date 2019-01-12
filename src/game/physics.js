@@ -1,9 +1,10 @@
 import { GRAVITY, BASE_Y } from './constant';
 
 class Physics {
-  constructor(x, y) {
+  constructor(x, y, mass) {
     this.x = x;
     this.y = y;
+    this.mass = mass;
     this.dLeft = 0;
     this.dRight = 0;
     this.dUp = 0;
@@ -22,11 +23,11 @@ class Physics {
     this.x += this.dX();
 
     if (this.dUp > 0) {
-      this.dUp -= GRAVITY;
-      this.dDown += GRAVITY;
+      this.dUp -= GRAVITY * this.mass;
+      this.dDown += GRAVITY * this.mass;
     }
 
-    if (this.y + this.dY() + GRAVITY > BASE_Y) {
+    if (this.y + this.dY() + GRAVITY * this.mass > BASE_Y && this.mass === 1) {
       this.y = BASE_Y;
       this.dDown = 0;
       this.dUp = 0;
