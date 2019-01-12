@@ -1,4 +1,4 @@
-import { gravity, baseY } from './constant';
+import { GRAVITY, BASE_Y } from './constant';
 
 class Physics {
   constructor(x, y) {
@@ -22,12 +22,12 @@ class Physics {
     this.x += this.dX();
 
     if (this.dUp > 0) {
-      this.dUp -= gravity;
-      this.dDown += gravity;
+      this.dUp -= GRAVITY;
+      this.dDown += GRAVITY;
     }
 
-    if (this.y + this.dY() + gravity > baseY) {
-      this.y = baseY;
+    if (this.y + this.dY() + GRAVITY > BASE_Y) {
+      this.y = BASE_Y;
       this.dDown = 0;
       this.dUp = 0;
     } else {
