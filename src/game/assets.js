@@ -3,6 +3,6 @@ import Physics from './physics';
 
 export const pikachu = new Pikachu(new Physics(0, 348));
 
-export const assetsArray = [
+export const initialAssets = {
   pikachu,
-];
+};

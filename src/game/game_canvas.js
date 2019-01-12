@@ -1,18 +1,12 @@
-import Pikachu from './pikachu/pikachu';
-
 class GameCanvas {
-  constructor(canvas, ctx, assetsArray) {
+  constructor(canvas, ctx, initialAssets) {
     this.canvas = canvas;
     this.ctx = ctx;
-    this.assets = assetsArray;
+    this.assets = initialAssets;
   }
 
   drawAsset(asset) {
     const { physics, sprite } = asset;
-
-    // if (asset instanceof Pikachu) {
-    //   asset.updateSprite();
-    // }
 
     this.ctx.drawImage(
       sprite.image, sprite.srcX(), sprite.srcY(), sprite.width, sprite.height,
@@ -30,6 +24,8 @@ class GameCanvas {
     const animate = () => {
       requestAnimationFrame(animate);
 
+      const assets = Object.values(this.assets);
+
       const now = performance.now();
       const elapsed = now - then;
 
@@ -41,8 +37,8 @@ class GameCanvas {
           this.canvas.width, this.canvas.height,
         );
 
-        for (let i = 0; i < this.assets.length; i += 1) {
-          this.drawAsset(this.assets[i]);
+        for (let i = 0; i < assets.length; i += 1) {
+          this.drawAsset(assets[i]);
         }
       }
     };
