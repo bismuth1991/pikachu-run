@@ -20,8 +20,8 @@ export const isRCCollided = (rect, circle) => {
 
   // If the distance is greater than halfCircle + halfRect,
   // then they are too far apart to be colliding
-  if (distX > (rect.sprite.width / 2 + circle.physics.radius)) { return false; }
-  if (distY > (rect.sprite.height / 2 + circle.physics.radius)) { return false; }
+  if (distX > (rect.sprite.width / 2 + circle.radius)) { return false; }
+  if (distY > (rect.sprite.height / 2 + circle.radius)) { return false; }
 
   // If the distance is less than halfRect then they are definitely colliding
   if (distX <= (rect.sprite.width / 2)) { return true; }
@@ -34,7 +34,7 @@ export const isRCCollided = (rect, circle) => {
   // Using Pythagoras formula to compare the distance between circle and rect centers
   const dx = distX - rect.sprite.width / 2;
   const dy = distY - rect.sprite.height / 2;
-  return (dx * dx + dy * dy <= (circle.physics.radius * circle.physics.radius));
+  return (dx * dx + dy * dy <= (circle.radius * circle.radius));
 };
 
 // circle to circle collision

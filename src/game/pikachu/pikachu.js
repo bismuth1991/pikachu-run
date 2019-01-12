@@ -19,7 +19,7 @@ class Pikachu {
     if (key === 'w') {
       this.sprite = pikachuRollSprite;
       this.sprite.isLeft = this.isLeft;
-      this.physics.dUp = 50;
+      this.physics.dUp = 55;
     }
     if (key === 'a') {
       if (this.isADPress) return;
@@ -48,7 +48,8 @@ class Pikachu {
       this.isADPress = false;
       this.physics.dLeft = 0;
     }
-    if (this.physics.dX() === 0 && this.physics.dY() <= 30) {
+    // if (this.physics.dX() === 0 && this.physics.dY() <= 30) {
+    if (this.physics.dX() === 0) {
       this.sprite = pikachuStaticSprite;
       this.sprite.isLeft = this.isLeft;
     }

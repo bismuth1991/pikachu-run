@@ -1,48 +1,46 @@
-export const drawBubble = (bubble, ctx) => {
-  bubble.rotate();
-
-  ctx.save();
-  ctx.translate(bubble.physics.x, bubble.physics.y);
-  ctx.rotate(bubble.rotation * Math.PI / 180);
+const drawPoppingLine = (line, ctx) => {
+  line.getValues();
 
   ctx.beginPath();
   ctx.strokeStyle = 'black';
   ctx.lineWidth = 1;
-  ctx.arc(0, 0, bubble.radius - 3, 0, Math.PI * 1.5, true);
+
+  ctx.moveTo(line.x, line.y);
+
+  ctx.lineTo(line.x + line.endX, line.y + line.endY);
   ctx.stroke();
 
-  ctx.beginPath();
-  ctx.arc(0, 0, bubble.radius, 0, Math.PI * 2, false);
-  ctx.stroke();
+  line.updateValues();
+};
 
-  ctx.restore();
+const drawBubble = (bubble, ctx) => {
+  bubble.rotate();
+
+  if (!bubble.isPop) {
+    ctx.save();
+    ctx.translate(bubble.physics.x, bubble.physics.y);
+    ctx.rotate(bubble.rotation * Math.PI / 180);
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 1;
+    ctx.arc(0, 0, bubble.radius - 3, 0, Math.PI * 1.5, true);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(0, 0, bubble.radius, 0, Math.PI * 2, false);
+    ctx.stroke();
+
+    ctx.restore();
+
+    if (bubble.isOutOfBounds()) bubble.resetPhysics();
+  } else {
+    for (let i = 0; i < bubble.lines.length; i += 1) {
+      drawPoppingLine(bubble.lines[i], ctx);
+    }
+  }
 
   bubble.physics.updatePos();
-  bubble.resetPos();
 };
 
-export const drawPoppingLine = (line, ctx) => {
-  line.updateValues();
-
-  const { x, y, endX, endY } = line;
-
-  ctx.beginPath();
-  ctx.strokeStyle = 'black';
-  ctx.lineWidth = 2;
-
-  ctx.moveTo(x, y);
-  // if (line.x < line.bubble.position.x) {
-  //   line.endX = line.lineLength * -1;
-  // }
-  // if (line.y < line.bubble.position.y) {
-  //   line.endY = line.lineLength * -1;
-  // }
-  // if (line.y === line.bubble.position.y) {
-  //   line.endY = 0;
-  // }
-  // if (line.x === line.bubble.position.x) {
-  //   line.endX = 0;
-  // }
-  ctx.lineTo(x + endX, y + endY);
-  ctx.stroke();
-};
+export default drawBubble;

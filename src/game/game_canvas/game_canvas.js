@@ -1,10 +1,19 @@
 import drawBubble from './draw_bubble';
+import { isRCCollided } from '../utils/collision_util';
 
 class GameCanvas {
   constructor(canvas, ctx, initialAssets) {
     this.canvas = canvas;
     this.ctx = ctx;
     this.assets = initialAssets;
+  }
+
+  static checkPikaBubblesCollision(pikachu, bubbles) {
+    for (let i = 0; i < bubbles.length; i += 1) {
+      if (isRCCollided(pikachu, bubbles[i])) {
+        bubbles[i].pop();
+      }
+    }
   }
 
   drawAsset(asset) {
@@ -48,6 +57,7 @@ class GameCanvas {
         this.drawAsset(pikachu);
         for (let i = 0; i < bubbles.length; i += 1) {
           drawBubble(bubbles[i], this.ctx);
+          GameCanvas.checkPikaBubblesCollision(pikachu, bubbles);
         }
       }
     };

@@ -27,7 +27,7 @@ class Physics {
       this.dDown += GRAVITY * this.mass;
     }
 
-    if (this.y + this.dY() + GRAVITY * this.mass > BASE_Y && this.mass === 1) {
+    if (this.y + this.dY() + GRAVITY * this.mass > BASE_Y && this.mass !== 0) {
       this.y = BASE_Y;
       this.dDown = 0;
       this.dUp = 0;
