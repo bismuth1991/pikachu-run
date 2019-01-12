@@ -14,7 +14,7 @@ export const randomColor = colors => colors[Math.floor(Math.random() * colors.le
 export const randomPhysics = () => {
   const physics = new Physics(
     randomFromRange(0, CANVAS_WIDTH),
-    randomFromRange(0, 20),
+    0,
     OTHER_MASS,
   );
 
