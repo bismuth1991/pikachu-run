@@ -1,3 +1,4 @@
+import Physics from '../physics';
 import {
   pikachuRollSprite,
   pikachuStaticSprite,
@@ -5,8 +6,8 @@ import {
 } from './pikachu_sprite_sheets';
 
 class Pikachu {
-  constructor(physics) {
-    this.physics = physics;
+  constructor() {
+    this.physics = new Physics(0, 348);
     this.sprite = pikachuStaticSprite;
     this.isADPress = false;
     this.isLeft = false;
