@@ -10,9 +10,9 @@ class GameCanvas {
   drawAsset(asset) {
     const { physics, sprite } = asset;
 
-    if (asset instanceof Pikachu) {
-      asset.updateSprite();
-    }
+    // if (asset instanceof Pikachu) {
+    //   asset.updateSprite();
+    // }
 
     this.ctx.drawImage(
       sprite.image, sprite.srcX(), sprite.srcY(), sprite.width, sprite.height,
