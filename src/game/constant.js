@@ -10,3 +10,6 @@ export const MAX_ROTATION = 100;
 
 export const PIKACHU_MASS = 1;
 export const OTHER_MASS = 0;
+
+export const PIKACHU_JUMP_HEIGHT = 55;
+export const PIKACHU_RUN_SPEED = 20;

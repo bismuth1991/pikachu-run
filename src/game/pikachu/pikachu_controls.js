@@ -3,12 +3,21 @@ const setupControlListeners = (game) => {
     if (repeat) return;
 
     const { pikachu } = game.assets;
-    pikachu.handleMovementKeyDown(key);
+
+    if (key === 'w') {
+      pikachu.jump();
+    }
+    if (key === 'a') {
+      pikachu.runLeft();
+    }
+    if (key === 'd') {
+      pikachu.runRight();
+    }
   });
 
   window.addEventListener('keyup', ({ key }) => {
     const { pikachu } = game.assets;
-    pikachu.handleMovementKeyUp(key);
+    pikachu.stop(key);
   });
 };
 

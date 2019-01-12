@@ -1,5 +1,5 @@
 import Physics from '../physics';
-import { BASE_Y, PIKACHU_MASS } from '../constant';
+import { BASE_Y, PIKACHU_MASS, PIKACHU_JUMP_HEIGHT, PIKACHU_RUN_SPEED } from '../constant';
 
 import {
   pikachuRollSprite,
@@ -15,40 +15,39 @@ class Pikachu {
     this.isLeft = false;
   }
 
-  handleMovementKeyDown(key) {
-    if (key === 'w') {
-      this.sprite = pikachuRollSprite;
-      this.sprite.isLeft = this.isLeft;
-      this.physics.dUp = 55;
-    }
-    if (key === 'a') {
-      if (this.isADPress) return;
-      this.isADPress = true;
-      this.isLeft = true;
-      this.sprite = pikachuRunSprite;
-      this.sprite.isLeft = this.isLeft;
-      this.physics.dLeft = 20;
-    }
-    if (key === 'd') {
-      if (this.isADPress) return;
-      this.isADPress = true;
-      this.isLeft = false;
-      this.sprite = pikachuRunSprite;
-      this.sprite.isLeft = this.isLeft;
-      this.physics.dRight = 20;
-    }
+  jump() {
+    this.sprite = pikachuRollSprite;
+    this.sprite.isLeft = this.isLeft;
+    this.physics.dUp = PIKACHU_JUMP_HEIGHT;
   }
 
-  handleMovementKeyUp(key) {
-    if (key === 'd') {
+  runLeft() {
+    if (this.isADPress) return;
+    this.isADPress = true;
+    this.isLeft = true;
+    this.sprite = pikachuRunSprite;
+    this.sprite.isLeft = this.isLeft;
+    this.physics.dLeft = PIKACHU_RUN_SPEED;
+  }
+
+  runRight() {
+    if (this.isADPress) return;
+    this.isADPress = true;
+    this.isLeft = false;
+    this.sprite = pikachuRunSprite;
+    this.sprite.isLeft = this.isLeft;
+    this.physics.dRight = PIKACHU_RUN_SPEED;
+  }
+
+  stop(keyUp) {
+    if (keyUp === 'd') {
       this.isADPress = false;
       this.physics.dRight = 0;
     }
-    if (key === 'a') {
+    if (keyUp === 'a') {
       this.isADPress = false;
       this.physics.dLeft = 0;
     }
-    // if (this.physics.dX() === 0 && this.physics.dY() <= 30) {
     if (this.physics.dX() === 0) {
       this.sprite = pikachuStaticSprite;
       this.sprite.isLeft = this.isLeft;

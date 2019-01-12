@@ -10,10 +10,6 @@ class PoppingLine {
     this.inversePop = false;
   }
 
-  toggleInversePop() {
-    this.inversePop = !this.inversePop;
-  }
-
   resetValues() {
     this.lineLength = 0;
     this.popDistance = 0;
