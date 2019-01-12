@@ -16,6 +16,9 @@ const drawBubble = (bubble, ctx) => {
   ctx.stroke();
 
   ctx.restore();
+
+  bubble.physics.updatePos();
+  bubble.resetPos();
 };
 
 export default drawBubble;

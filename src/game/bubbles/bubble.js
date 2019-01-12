@@ -1,5 +1,5 @@
 import { randomPhysics, randomRadius, randomRotation } from '../utils/other_utils';
-import { MAX_ROTATION } from '../constant';
+import { MAX_ROTATION, CANVAS_HEIGHT, CANVAS_WIDTH } from '../constant';
 
 class Bubble {
   constructor() {
@@ -22,6 +22,14 @@ class Bubble {
       this.rotation -= 1;
     } else {
       this.rotationDirection = 'forward';
+    }
+  }
+
+  resetPos() {
+    const { x, y } = this.physics;
+
+    if (x > CANVAS_WIDTH || x < 0 || y > CANVAS_HEIGHT || y < 0) {
+      this.physics = randomPhysics();
     }
   }
 }

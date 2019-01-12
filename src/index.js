@@ -1,4 +1,4 @@
-import GameCanvas from './game/game_canvas';
+import GameCanvas from './game/game_canvas/game_canvas';
 import setupControlListeners from './game/pikachu/pikachu_controls';
 import { initialAssets } from './game/assets';
 import { CANVAS_WIDTH, CANVAS_HEIGHT } from './game/constant';

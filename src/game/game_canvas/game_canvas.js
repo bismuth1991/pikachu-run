@@ -1,3 +1,5 @@
+import drawBubble from './draw_bubble';
+
 class GameCanvas {
   constructor(canvas, ctx, initialAssets) {
     this.canvas = canvas;
@@ -30,6 +32,7 @@ class GameCanvas {
       requestAnimationFrame(animate);
 
       const assets = Object.values(this.assets);
+      const [pikachu, bubbles] = assets;
 
       const now = performance.now();
       const elapsed = now - then;
@@ -42,8 +45,9 @@ class GameCanvas {
           this.canvas.width, this.canvas.height,
         );
 
-        for (let i = 0; i < assets.length; i += 1) {
-          this.drawAsset(assets[i]);
+        this.drawAsset(pikachu);
+        for (let i = 0; i < bubbles.length; i += 1) {
+          drawBubble(bubbles[i], this.ctx);
         }
       }
     };
