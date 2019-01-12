@@ -29,8 +29,21 @@ class PoppingLine {
       + (bubble.radius + popDistanceReturn) * Math.sin(2 * Math.PI * index / bubble.lines.length);
 
     this.lineLength = bubble.radius * popDistance;
-    this.endX = this.lineLength;
-    this.endY = this.lineLength;
+    // this.endX = this.lineLength;
+    // this.endY = this.lineLength;
+
+    if (this.x < bubble.physics.x) {
+      this.endX = this.lineLength * -1;
+    }
+    if (this.y < bubble.physics.y) {
+      this.endY = this.lineLength * -1;
+    }
+    if (this.y === bubble.physics.y) {
+      this.endY = 0;
+    }
+    if (this.x === bubble.physics.x) {
+      this.endX = 0;
+    }
   }
 }
 

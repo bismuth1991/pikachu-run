@@ -1,4 +1,4 @@
-const drawBubble = (bubble, ctx) => {
+export const drawBubble = (bubble, ctx) => {
   bubble.rotate();
 
   ctx.save();
@@ -21,4 +21,28 @@ const drawBubble = (bubble, ctx) => {
   bubble.resetPos();
 };
 
-export default drawBubble;
+export const drawPoppingLine = (line, ctx) => {
+  line.updateValues();
+
+  const { x, y, endX, endY } = line;
+
+  ctx.beginPath();
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 2;
+
+  ctx.moveTo(x, y);
+  // if (line.x < line.bubble.position.x) {
+  //   line.endX = line.lineLength * -1;
+  // }
+  // if (line.y < line.bubble.position.y) {
+  //   line.endY = line.lineLength * -1;
+  // }
+  // if (line.y === line.bubble.position.y) {
+  //   line.endY = 0;
+  // }
+  // if (line.x === line.bubble.position.x) {
+  //   line.endX = 0;
+  // }
+  ctx.lineTo(x + endX, y + endY);
+  ctx.stroke();
+};
