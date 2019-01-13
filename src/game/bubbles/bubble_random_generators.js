@@ -1,17 +1,19 @@
 import Physics from '../physics';
 import { randomFromRange } from '../utils/other_utils';
 import {
-  CANVAS_WIDTH,
   MIN_RADIUS,
   MAX_RADIUS,
   MAX_ROTATION,
   IGNORE_GRAVITY,
+  BUBBLE_MIN_SPAWN_X,
+  BUBBLE_MAX_SPAWN_X,
+  BUBBLE_SPAWN_Y,
 } from '../constant';
 
 export const randomPhysics = () => {
   const physics = new Physics(
-    randomFromRange(0, CANVAS_WIDTH),
-    0,
+    randomFromRange(BUBBLE_MIN_SPAWN_X, BUBBLE_MAX_SPAWN_X),
+    BUBBLE_SPAWN_Y,
     IGNORE_GRAVITY,
   );
 

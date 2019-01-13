@@ -1,4 +1,4 @@
-import { GRAVITY, BASE_Y } from './constant';
+import { GRAVITY, BASE_Y, ENERGY_LOSS } from './constant';
 
 class Physics {
   constructor(x, y, mass) {
@@ -23,7 +23,7 @@ class Physics {
     this.x += this.dX();
 
     if (this.dUp > 0) {
-      this.dUp -= GRAVITY * this.mass;
+      this.dUp *= ENERGY_LOSS;
       this.dDown += GRAVITY * this.mass;
     }
 

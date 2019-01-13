@@ -51,7 +51,7 @@ class Bubble {
 
   isOutOfBounds() {
     const { x, y } = this.physics;
-    return (x > CANVAS_WIDTH || x < 0 || y > CANVAS_HEIGHT || y < 0);
+    return (x > CANVAS_WIDTH || x < 0 || y > CANVAS_HEIGHT);
   }
 }
 

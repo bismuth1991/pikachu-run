@@ -1,4 +1,5 @@
 export const GRAVITY = 5;
+export const ENERGY_LOSS = 0.9;
 export const BASE_Y = 348;
 
 export const CANVAS_HEIGHT = 500;
@@ -16,6 +17,9 @@ export const NUM_BUBBLES = 20;
 export const MIN_RADIUS = 10;
 export const MAX_RADIUS = 20;
 export const MAX_ROTATION = 100;
+export const BUBBLE_MIN_SPAWN_X = 0;
+export const BUBBLE_MAX_SPAWN_X = CANVAS_WIDTH;
+export const BUBBLE_SPAWN_Y = -50;
 
 // Spearow
 export const NUM_SPEAROWS = 3;
