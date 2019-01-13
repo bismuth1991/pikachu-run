@@ -1,5 +1,5 @@
 import Physics from '../physics';
-import { BASE_Y, PIKACHU_MASS, PIKACHU_JUMP_HEIGHT, PIKACHU_RUN_SPEED } from '../constant';
+import { BASE_Y, PIKACHU_MASS, PIKACHU_JUMP_HEIGHT, PIKACHU_RUN_SPEED, CANVAS_WIDTH } from '../constant';
 
 import {
   pikachuRollSprite,
@@ -55,7 +55,15 @@ class Pikachu {
   }
 
   isOutOfBounds() {
-    return false;
+    const { x } = this.physics;
+    return (x < 0 || x + this.sprite.width > CANVAS_WIDTH);
+  }
+
+  resetPhysics() {
+    const { x } = this.physics;
+
+    if (x < 0) this.physics.x = 0;
+    if (x + this.sprite.width > CANVAS_WIDTH) this.physics.x = CANVAS_WIDTH - this.sprite.width;
   }
 }
 

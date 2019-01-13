@@ -1,6 +1,5 @@
 import drawBubble from './draw_bubble';
 import { isRCCollided } from '../utils/collision_util';
-import Pikachu from '../pikachu/pikachu';
 
 class GameCanvas {
   constructor(canvas, ctx, initialAssets) {
