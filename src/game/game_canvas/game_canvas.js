@@ -9,12 +9,8 @@ class GameCanvas {
     this.assets = initialAssets;
   }
 
-  static checkPikaBubblesCollision(pikachu, bubbles) {
-    for (let i = 0; i < bubbles.length; i += 1) {
-      if (isRCCollided(pikachu, bubbles[i])) {
-        bubbles[i].pop();
-      }
-    }
+  static checkPikachuBubblesCollision(pikachu, bubble) {
+    if (isRCCollided(pikachu, bubble)) bubble.pop();
   }
 
   draw(fps) {
@@ -42,7 +38,7 @@ class GameCanvas {
 
         for (let i = 0; i < bubbles.length; i += 1) {
           drawBubble(bubbles[i], this.ctx);
-          GameCanvas.checkPikaBubblesCollision(pikachu, bubbles);
+          GameCanvas.checkPikachuBubblesCollision(pikachu, bubbles[i]);
         }
 
         for (let i = 0; i < obstacles.length; i += 1) {
