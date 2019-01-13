@@ -1,5 +1,5 @@
 import Physics from '../physics';
-import { randomFromRange } from '../utils/other_utils';
+import { randomFromRange, randomColor } from '../utils/other_utils';
 import {
   METEOR_MASS,
   METEOR_MIN_SPAWN_Y,
@@ -8,6 +8,7 @@ import {
   METEOR_MIN_SPAWN_X,
   METEOR_MIN_RADIUS,
   METEOR_MAX_RADIUS,
+  METEOR_COLORS,
 } from '../constant';
 
 export const randomPhysics = () => {
@@ -25,3 +26,4 @@ export const randomPhysics = () => {
 };
 
 export const randomRadius = () => randomFromRange(METEOR_MIN_RADIUS, METEOR_MAX_RADIUS);
+export const randomMeteorColor = () => randomColor(METEOR_COLORS);

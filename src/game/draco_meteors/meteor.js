@@ -1,10 +1,10 @@
-import { randomPhysics, randomRadius } from './meteor_random_generators';
+import { randomPhysics, randomRadius, randomMeteorColor } from './meteor_random_generators';
 
 class Meteor {
   constructor() {
     this.physics = randomPhysics();
     this.radius = randomRadius();
-    this.color = 'red';
+    this.color = randomMeteorColor();
   }
 }
 

@@ -38,3 +38,4 @@ export const METEOR_MIN_SPAWN_X = 0;
 export const METEOR_MAX_SPAWN_X = CANVAS_WIDTH;
 export const METEOR_MIN_SPAWN_Y = -100;
 export const METEOR_MAX_SPAWN_Y = -300;
+export const METEOR_COLORS = ['#112F41', '#068587', '#4FB99F', '#F2B134', '#ED553B'];
