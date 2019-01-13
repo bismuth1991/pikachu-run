@@ -14,7 +14,7 @@ class GameCanvas {
   }
 
   static checkPikachuObstacleCollision(pikachu, obstacle) {
-    if (isRRCollided(pikachu, obstacle)) console.log('collide');
+    if (isRRCollided(pikachu, obstacle)) console.log('collided');
   }
 
   draw(fps) {
