@@ -1,5 +1,6 @@
 import drawBubble from './draw_bubble';
 import { isRCCollided } from '../utils/collision_util';
+import { drawPikachu, drawObstacle } from './draw_asset';
 
 class GameCanvas {
   constructor(canvas, ctx, initialAssets) {
@@ -16,34 +17,12 @@ class GameCanvas {
     }
   }
 
-  drawAsset(asset) {
-    if (asset.isOutOfBounds()) asset.resetPhysics();
-
-    const { physics, sprite } = asset;
-
-    this.ctx.save();
-    this.ctx.translate(physics.x, physics.y);
-
-    this.ctx.drawImage(
-      sprite.image, sprite.srcX(), sprite.srcY(), sprite.width, sprite.height,
-      0, 0, sprite.width, sprite.height,
-    );
-
-    this.ctx.restore();
-
-    physics.updatePos();
-    sprite.updateFrame();
-  }
-
   draw(fps) {
     const fpsInterval = 1000 / fps;
     let then = performance.now();
 
     const animate = () => {
       requestAnimationFrame(animate);
-
-      const assets = Object.values(this.assets);
-      const [pikachu, bubbles, obstacles] = assets;
 
       const now = performance.now();
       const elapsed = now - then;
@@ -56,15 +35,18 @@ class GameCanvas {
           this.canvas.width, this.canvas.height,
         );
 
-        this.drawAsset(pikachu);
+        const assets = Object.values(this.assets);
+        const [pikachu, bubbles, obstacles] = assets;
+
+        drawPikachu(pikachu, this.ctx);
 
         for (let i = 0; i < bubbles.length; i += 1) {
           drawBubble(bubbles[i], this.ctx);
           GameCanvas.checkPikaBubblesCollision(pikachu, bubbles);
         }
 
-        for (let j = 0; j < obstacles.length; j += 1) {
-          this.drawAsset(obstacles[j], this.ctx);
+        for (let i = 0; i < obstacles.length; i += 1) {
+          drawObstacle(obstacles[i], this.ctx);
         }
       }
     };
