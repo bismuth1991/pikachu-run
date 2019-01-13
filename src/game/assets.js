@@ -10,7 +10,9 @@ for (let i = 0; i < 20; i += 1) {
 }
 
 const obstacles = [];
-obstacles.push(new Spearow());
+for (let i = 0; i < 3; i += 1) {
+  obstacles.push(new Spearow());
+}
 
 
 const initialAssets = {
