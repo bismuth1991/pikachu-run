@@ -1,17 +1,24 @@
 import Sprite from '../sprite';
+import { randomSpearowPhysics } from '../utils/random_generator_utils';
 
-const spearowSpriteSheet = require('../../assets/images/spearow.png');
+const spearowSpriteSheet = require('../../assets/images/spearow-small.png');
 
 const spearowFly = new Image();
 spearowFly.src = spearowSpriteSheet;
-const spearowFlySprite = new Sprite(spearowFly, 53, 236, 1, 4);
+const spearowFlySprite = new Sprite(spearowFly, 50, 224, 1, 4);
 
 class Spearow {
-  constructor(physics) {
-    this.physics = physics;
+  constructor() {
+    this.physics = randomSpearowPhysics();
     this.sprite = spearowFlySprite;
+  }
 
-    this.physics.dLeft = 15;
+  isOutOfBounds() {
+    return this.physics.x < 0;
+  }
+
+  resetPhysics() {
+    this.physics = randomSpearowPhysics();
   }
 }
 

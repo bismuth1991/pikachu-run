@@ -53,6 +53,10 @@ class Pikachu {
       this.sprite.isLeft = this.isLeft;
     }
   }
+
+  isOutOfBounds() {
+    return false;
+  }
 }
 
 export default Pikachu;

@@ -4,6 +4,7 @@
   "description": "A clone of Google Chrome dinosaur game but with different sprites and more interactivity   + Obstacles     + cacti, birds will be replaced my animated pokemon sprites     + There will be Team Rocket flying on a Meowth balloon on the top right of the screen, shooting bouncing bubbles down   + Interactivity     + pikachu can run forward, jump, roll backwards     + pikachu can use skill 'thundershock' to either: remove a bubble or flying obstabcle from the screen     + I'll think of another skill and implement it during the project     + Skills will have cooldown",
   "main": "index.js",
   "scripts": {
+    "start": "npx parcel ./src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
