@@ -1,4 +1,5 @@
 const drawAsset = (asset, ctx) => {
+  // debugger;
   if (asset.isOutOfBounds()) asset.resetPhysics();
 
   const { physics, sprite } = asset;

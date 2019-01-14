@@ -1,6 +1,7 @@
-import drawBubble from './draw_bubble';
 import { isRCCollided, isRRCollided } from '../utils/collision_util';
+import drawBubble from './draw_bubble';
 import { drawPikachu, drawObstacle } from './draw_asset';
+import drawMeteor from './draw_meteor';
 
 class GameCanvas {
   constructor(canvas, ctx, initialAssets) {
@@ -33,7 +34,7 @@ class GameCanvas {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         const assets = Object.values(this.assets);
-        const [pikachu, bubbles, obstacles] = assets;
+        const [pikachu, bubbles, meteors, obstacles] = assets;
 
         drawPikachu(pikachu, this.ctx);
 
@@ -46,6 +47,10 @@ class GameCanvas {
           drawObstacle(obstacles[i], this.ctx);
           GameCanvas.checkPikachuObstacleCollision(pikachu, obstacles[i]);
         }
+
+        // for (let i = 0; i < meteors.length; i += 1) {
+        //   drawMeteor(meteors[i], this.ctx);
+        // }
       }
     };
 
