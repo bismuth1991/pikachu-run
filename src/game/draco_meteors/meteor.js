@@ -1,11 +1,20 @@
 import { randomPhysics, randomRadius, randomMeteorColor } from './meteor_random_generators';
-import { BASE_Y, ENERGY_LOSS } from '../constant';
+import { BASE_Y, ENERGY_LOSS, NUM_METEORS } from '../constant';
 
 class Meteor {
   constructor() {
     this.physics = randomPhysics();
     this.radius = randomRadius();
     this.color = randomMeteorColor();
+  }
+
+  static makeMeteor() {
+    const meteors = [];
+    for (let i = 0; i < NUM_METEORS; i += 1) {
+      meteors.push(new Meteor());
+    }
+
+    return meteors;
   }
 
   isHitGround() {
