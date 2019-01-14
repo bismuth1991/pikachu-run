@@ -1,7 +1,7 @@
 import Pikachu from './pikachu/pikachu';
 import Bubble from './bubbles/bubble';
 import Spearow from './obstacles/spearow';
-import Meteor from './draco_meteors/meteor';
+import Meteor from './dragonite/meteor';
 
 const pikachu = new Pikachu();
 

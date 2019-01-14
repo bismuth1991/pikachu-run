@@ -18,9 +18,9 @@ export const randomPhysics = () => {
     METEOR_MASS,
   );
 
-  physics.dDown = randomFromRange(5, 10);
-  physics.dLeft = randomFromRange(0, 10);
-  physics.dRight = randomFromRange(0, 10);
+  physics.dDown = randomFromRange(0, 1);
+  physics.dLeft = randomFromRange(0, 20);
+  physics.dRight = randomFromRange(0, 20);
 
   return physics;
 };

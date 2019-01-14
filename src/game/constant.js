@@ -31,9 +31,10 @@ export const SPEAROW_SPEED = 15;
 
 // Meteor
 export const NUM_METEORS = 10;
-export const METEOR_MASS = 2;
-export const METEOR_MIN_RADIUS = 10;
-export const METEOR_MAX_RADIUS = 20;
+export const METEOR_MASS = 0.1;
+export const METEOR_FRICTION = 0.95;
+export const METEOR_MIN_RADIUS = 20;
+export const METEOR_MAX_RADIUS = 30;
 export const METEOR_MIN_SPAWN_X = 0;
 export const METEOR_MAX_SPAWN_X = CANVAS_WIDTH;
 export const METEOR_MIN_SPAWN_Y = -100;

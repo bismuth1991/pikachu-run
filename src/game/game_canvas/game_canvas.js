@@ -48,9 +48,9 @@ class GameCanvas {
           GameCanvas.checkPikachuObstacleCollision(pikachu, obstacles[i]);
         }
 
-        // for (let i = 0; i < meteors.length; i += 1) {
-        //   drawMeteor(meteors[i], this.ctx);
-        // }
+        for (let i = 0; i < meteors.length; i += 1) {
+          drawMeteor(meteors[i], this.ctx);
+        }
       }
     };
 
