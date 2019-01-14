@@ -2,6 +2,7 @@ import Sprite from '../sprite';
 import dragonitePhysics from './dragonite_random_generators';
 import { NUM_DRAGONITE, DRAGONITE_METEORS_DEACTIVATION_X } from '../constant';
 import Meteor from './meteor';
+import { getCanvasBackground, addFilterInvert, removeFilterInvert } from '../domManipulators';
 
 const dragoniteSpriteSheet = require('../../assets/images/dragonite-small.png');
 
@@ -27,10 +28,6 @@ class Dragonite {
     return dragonites;
   }
 
-  static getCanvasBackground() {
-    return document.getElementsByClassName('canvas-container')[0];
-  }
-
   isOutOfBounds() {
     return this.physics.x + this.sprite.width < DRAGONITE_METEORS_DEACTIVATION_X;
   }
@@ -43,16 +40,16 @@ class Dragonite {
     this.meteors = Meteor.makeMeteor();
     this.isMeteorsActivate = true;
 
-    const canvasBackground = Dragonite.getCanvasBackground();
-    canvasBackground.classList.add('filter-invert');
+    const canvasBackground = getCanvasBackground();
+    addFilterInvert(canvasBackground);
   }
 
   deactivateDracoMeteor() {
     this.meteors = [];
     this.isMeteorsActivate = false;
 
-    const canvasBackground = Dragonite.getCanvasBackground();
-    canvasBackground.classList.remove('filter-invert');
+    const canvasBackground = getCanvasBackground();
+    removeFilterInvert(canvasBackground);
   }
 }
 
