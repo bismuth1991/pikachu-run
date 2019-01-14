@@ -1,7 +1,7 @@
 import Pikachu from './pikachu/pikachu';
 import Bubble from './bubbles/bubble';
 import Spearow from './obstacles/spearow';
-import Meteor from './dragonite/meteor';
+import Dragonite from './dragonite/dragonite';
 
 const pikachu = new Pikachu();
 
@@ -11,8 +11,8 @@ const obstacles = [
 
 const initialAssets = {
   pikachu,
+  dragonites: Dragonite.makeDragonites(),
   bubbles: Bubble.makeBubbles(),
-  meteors: Meteor.makeMeteor(),
   obstacles,
 };
 

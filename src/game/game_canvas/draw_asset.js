@@ -1,5 +1,7 @@
+import { DRAGONITE_METEORS_ACTIVATION_X } from '../constant';
+import drawMeteor from './draw_meteor';
+
 const drawAsset = (asset, ctx) => {
-  // debugger;
   if (asset.isOutOfBounds()) asset.resetPhysics();
 
   const { physics, sprite } = asset;
@@ -20,6 +22,25 @@ const drawAsset = (asset, ctx) => {
 
 export const drawPikachu = (pikachu, ctx) => {
   drawAsset(pikachu, ctx);
+};
+
+export const drawDragonite = (dragonite, ctx) => {
+  drawAsset(dragonite, ctx);
+
+  if (dragonite.physics.x < DRAGONITE_METEORS_ACTIVATION_X && !dragonite.isMeteorsActivate) {
+    dragonite.activateDracoMeteor();
+  }
+
+  if (dragonite.meteors.length > 0) {
+    for (let i = 0; i < dragonite.meteors.length; i += 1) {
+      drawMeteor(dragonite.meteors[i], ctx);
+    }
+  }
+
+  if (dragonite.isOutOfBounds()) {
+    // dragonite.resetPhysics();
+    dragonite.deactivateDracoMeteor();
+  }
 };
 
 export const drawObstacle = (obstacle, ctx) => {

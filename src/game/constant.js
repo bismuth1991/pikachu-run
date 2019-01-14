@@ -29,6 +29,17 @@ export const SPEAROW_MIN_SPAWN_X = 1000;
 export const SPEAROW_MAX_SPAWN_X = 2000;
 export const SPEAROW_SPEED = 15;
 
+// Dragonite
+export const NUM_DRAGONITE = 1;
+export const DRAGONITE_MIN_SPAWN_Y = 20;
+export const DRAGONITE_MAX_SPAWN_Y = 100;
+export const DRAGONITE_MIN_SPAWN_X = 1000;
+export const DRAGONITE_MAX_SPAWN_X = 1500;
+export const DRAGONITE_MIN_SPEED = 5;
+export const DRAGONITE_MAX_SPEED = 10;
+export const DRAGONITE_METEORS_ACTIVATION_X = CANVAS_WIDTH - 200;
+export const DRAGONITE_METEORS_DEACTIVATION_X = -200;
+
 // Meteor
 export const NUM_METEORS = 10;
 export const METEOR_MASS = 0.1;

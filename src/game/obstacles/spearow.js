@@ -24,7 +24,7 @@ class Spearow {
   }
 
   isOutOfBounds() {
-    return this.physics.x < 0;
+    return this.physics.x + this.sprite.width < 0;
   }
 
   resetPhysics() {

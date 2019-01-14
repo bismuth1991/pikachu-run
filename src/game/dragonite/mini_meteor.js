@@ -6,7 +6,7 @@ class MiniMeteor {
     this.physics = randomMiniMeteorPhysics(x, y);
     this.radius = 2;
     this.color = color;
-    this.timeToLive = 100;
+    this.timeToLive = 50;
   }
 
   isHitGround() {
@@ -19,6 +19,10 @@ class MiniMeteor {
     this.physics.dLeft *= MINI_METEOR_FRICTION;
     this.physics.dRight *= MINI_METEOR_FRICTION;
   }
+
+  // fade() {
+
+  // }
 }
 
 export default MiniMeteor;
