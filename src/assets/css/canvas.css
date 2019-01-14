@@ -9,5 +9,9 @@
   background-image: url('../images/background.png');
   background-size: cover;
   background-repeat: no-repeat;
-  /* -webkit-filter: invert(0.7) sepia(0.3); */
+}
+
+.filter-invert {
+  -webkit-filter: invert(0.7);
+  filter: invert(0.7);
 }
