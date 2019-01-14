@@ -10,7 +10,7 @@ export const IGNORE_GRAVITY = 0;
 export const PIKACHU_JUMP_HEIGHT = 55;
 export const PIKACHU_RUN_SPEED = 20;
 export const PIKACHU_MASS = 1;
-export const ENERGY_LOSS = 0.9;
+export const ENERGY_LOSS = 0.85;
 
 // Bubble
 export const NUM_BUBBLES = 20;

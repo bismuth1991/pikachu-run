@@ -1,4 +1,4 @@
-import { GRAVITY, BASE_Y, ENERGY_LOSS } from './constant';
+import { GRAVITY, BASE_Y, ENERGY_LOSS, PIKACHU_MASS } from './constant';
 
 class Physics {
   constructor(x, y, mass) {
@@ -22,12 +22,13 @@ class Physics {
   updatePos() {
     this.x += this.dX();
 
-    if (this.dUp > 0) {
+    // if (this.dUp > 0) {
+    if (this.y < BASE_Y) {
       this.dUp *= ENERGY_LOSS;
       this.dDown += GRAVITY * this.mass;
     }
 
-    if (this.y + this.dY() + GRAVITY * this.mass > BASE_Y && this.mass !== 0) {
+    if (this.y + this.dY() + GRAVITY * this.mass > BASE_Y && this.mass === PIKACHU_MASS) {
       this.y = BASE_Y;
       this.dDown = 0;
       this.dUp = 0;
