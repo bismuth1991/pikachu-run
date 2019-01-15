@@ -62,7 +62,7 @@ class Bubble {
   }
 
   isOutOfBounds() {
-    return (this.x > CANVAS_WIDTH || this.x < 0 || this.y > CANVAS_HEIGHT);
+    return (this.physics.x > CANVAS_WIDTH || this.physics.x < 0 || this.physics.y > CANVAS_HEIGHT);
   }
 }
 

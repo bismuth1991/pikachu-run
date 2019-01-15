@@ -40,9 +40,9 @@ export const meteorColor = () => randomColor(METEOR_COLORS);
 export const miniMeteorPhysics = (x, y) => {
   const miniMeteorPhys = new Physics(x, y, MINI_METEOR_MASS);
 
-  miniMeteorPhysics.dUp = randomFromRange(5, 50);
-  miniMeteorPhysics.dLeft = randomFromRange(5, 50);
-  miniMeteorPhysics.dRight = randomFromRange(5, 50);
+  miniMeteorPhys.dUp = randomFromRange(5, 50);
+  miniMeteorPhys.dLeft = randomFromRange(5, 50);
+  miniMeteorPhys.dRight = randomFromRange(5, 50);
 
   return miniMeteorPhys;
 };

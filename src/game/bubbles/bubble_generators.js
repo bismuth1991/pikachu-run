@@ -1,5 +1,7 @@
 import Physics from '../physics';
+
 import { randomFromRange } from '../utils/other_utils';
+
 import {
   MIN_RADIUS,
   MAX_RADIUS,

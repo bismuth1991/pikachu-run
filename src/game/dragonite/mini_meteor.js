@@ -17,7 +17,7 @@ class MiniMeteor {
   }
 
   isHitGround() {
-    return this.physics.y + this.radius <= BASE_Y;
+    return this.physics.y + this.radius >= BASE_Y;
   }
 
   bounce() {
