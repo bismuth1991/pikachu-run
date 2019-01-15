@@ -8,6 +8,7 @@ import {
 
 import './assets/css/normalize_8_0_1.css';
 import './assets/css/canvas.css';
+import { setupVolumeButtonEventListener } from './game/domManipulators';
 
 window.addEventListener('DOMContentLoaded', () => {
   const canvas = document.querySelector('canvas');
@@ -21,4 +22,5 @@ window.addEventListener('DOMContentLoaded', () => {
   game.draw(15);
 
   setupControlListeners(game);
+  setupVolumeButtonEventListener();
 });

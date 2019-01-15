@@ -3,7 +3,9 @@ const setupControlListeners = (game) => {
     if (repeat) return;
 
     if (key === ' ') {
-      game.play();
+      if (game.state === 'begin' || game.state === 'gameOver') {
+        game.play();
+      }
     }
 
     const { pikachu } = game.assets;

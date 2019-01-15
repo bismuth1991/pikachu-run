@@ -4,9 +4,18 @@ import drawDragonites from './draw_dragonites';
 import drawPrimeapes from './draw_primeapes';
 import drawBubbles from './draw_bubbles';
 import drawSpearows from './draw_spearows';
-import { drawSplashScreen, drawGameOver } from './draw_splash_screen';
 import { PIKACHU_MASS } from '../constant';
 import initialAssets from './assets';
+
+import {
+  drawSplashScreen,
+  drawGameOver,
+} from './draw_splash_screen';
+
+import {
+  removeCanvasFilterInvert,
+  playAudio,
+} from '../domManipulators';
 
 class GameCanvas {
   constructor(canvas, ctx) {
@@ -21,6 +30,8 @@ class GameCanvas {
   }
 
   play() {
+    removeCanvasFilterInvert();
+    playAudio();
     this.assets = initialAssets();
     this.state = 'start';
   }
@@ -67,7 +78,7 @@ class GameCanvas {
           drawDragonites(dragonites, pikachu, this.ctx);
           drawBubbles(bubbles, pikachu, this.ctx);
 
-          drawPoints(pikachu.points, this.ctx);
+          drawPoints(pikachu.points, pikachu.lifeLeft, this.ctx);
         }
       }
     };
