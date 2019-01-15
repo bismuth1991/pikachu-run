@@ -16,6 +16,8 @@ const primeapePhysics = () => {
   );
 
   physics.dLeft = PRIMEAPE_SPEED;
+
+  return physics;
 };
 
 export default primeapePhysics();
