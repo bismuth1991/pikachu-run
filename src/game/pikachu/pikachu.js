@@ -46,9 +46,9 @@ class Pikachu {
     this.isInvincible = true;
 
     if (this.isLeft) {
-      this.physics.x += knockback;
+      this.physics.dRight = knockback;
     } else {
-      this.physics.x -= knockback;
+      this.physics.dLeft = knockback;
     }
 
     setTimeout(() => { this.sprite = pikachuStaticSprite; this.isKeyLock = false; }, 1000);
@@ -61,6 +61,7 @@ class Pikachu {
     this.isLeft = true;
     this.sprite = pikachuRunSprite;
     this.sprite.isLeft = this.isLeft;
+    this.physics.dRight = 0;
     this.physics.dLeft = PIKACHU_RUN_SPEED;
   }
 
@@ -70,6 +71,7 @@ class Pikachu {
     this.isLeft = false;
     this.sprite = pikachuRunSprite;
     this.sprite.isLeft = this.isLeft;
+    this.physics.dLeft = 0;
     this.physics.dRight = PIKACHU_RUN_SPEED;
   }
 
