@@ -1,4 +1,5 @@
 import Physics from '../physics';
+
 import {
   SPEAROW_MIN_SPAWN_Y,
   SPEAROW_MAX_SPAWN_Y,
@@ -8,9 +9,9 @@ import {
   SPEAROW_MAX_SPAWN_X,
 } from '../constant';
 
-export const randomFromRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+import { randomFromRange } from '../utils/other_utils';
 
-export const randomSpearowPhysics = () => {
+const spearowPhysics = () => {
   const physics = new Physics(
     randomFromRange(SPEAROW_MIN_SPAWN_X, SPEAROW_MAX_SPAWN_X),
     randomFromRange(SPEAROW_MIN_SPAWN_Y, SPEAROW_MAX_SPAWN_Y),
@@ -20,3 +21,5 @@ export const randomSpearowPhysics = () => {
 
   return physics;
 };
+
+export default spearowPhysics;

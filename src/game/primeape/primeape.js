@@ -3,7 +3,12 @@ import {
   primeapeRunSprite,
   primeapePunchSprite,
 } from './primeape_sprite_sheets';
-import { PRIMEAPE_SPEED, NUM_PRIMEAPES } from '../constant';
+
+import {
+  PRIMEAPE_SPEED,
+  NUM_PRIMEAPES,
+} from '../constant';
+
 import { randomFromRange } from '../utils/other_utils';
 import primeapePhysics from './primeape_generator';
 

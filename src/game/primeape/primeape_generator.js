@@ -1,5 +1,7 @@
 import Physics from '../physics';
+
 import { randomFromRange } from '../utils/other_utils';
+
 import {
   PRIMEAPE_MIN_SPAWN_X,
   PRIMEAPE_MAX_SPAWN_X,
@@ -12,7 +14,6 @@ import {
 const primeapePhysics = () => {
   const physics = new Physics(
     randomFromRange(PRIMEAPE_MIN_SPAWN_X, PRIMEAPE_MAX_SPAWN_X),
-    // randomFromRange(800, 800),
     BASE_Y - PRIMEAPE_HEIGHT,
     IGNORE_GRAVITY,
   );

@@ -1,5 +1,5 @@
 import Sprite from '../sprite';
-import { randomSpearowPhysics } from './spearow_random_generators';
+import spearowPhysics from './spearow_generator';
 import { NUM_SPEAROWS } from '../constant';
 
 const spearowSpriteSheet = require('../../assets/images/spearow-small.png');
@@ -10,7 +10,7 @@ const spearowFlySprite = new Sprite(spearowFly, 50, 224, 1, 4);
 
 class Spearow {
   constructor() {
-    this.physics = randomSpearowPhysics();
+    this.physics = spearowPhysics();
     this.sprite = spearowFlySprite;
   }
 
@@ -28,7 +28,7 @@ class Spearow {
   }
 
   resetPhysics() {
-    this.physics = randomSpearowPhysics();
+    this.physics = spearowPhysics();
   }
 }
 

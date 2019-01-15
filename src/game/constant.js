@@ -24,11 +24,11 @@ export const BUBBLE_SPAWN_Y = -50;
 export const NUM_POPPING_LINES = 6;
 
 // Spearow
-export const NUM_SPEAROWS = 3;
-export const SPEAROW_MIN_SPAWN_Y = 200;
-export const SPEAROW_MAX_SPAWN_Y = 290;
+export const NUM_SPEAROWS = 5;
+export const SPEAROW_MIN_SPAWN_Y = 150;
+export const SPEAROW_MAX_SPAWN_Y = 270;
 export const SPEAROW_MIN_SPAWN_X = 1000;
-export const SPEAROW_MAX_SPAWN_X = 2000;
+export const SPEAROW_MAX_SPAWN_X = 4000;
 export const SPEAROW_SPEED = 15;
 
 // Primeape
@@ -41,8 +41,8 @@ export const PRIMEAPE_HEIGHT = 66;
 
 // Dragonite
 export const NUM_DRAGONITE = 1;
-export const DRAGONITE_MIN_SPAWN_Y = 20;
-export const DRAGONITE_MAX_SPAWN_Y = 100;
+export const DRAGONITE_MIN_SPAWN_Y = 10;
+export const DRAGONITE_MAX_SPAWN_Y = 50;
 export const DRAGONITE_MIN_SPAWN_X = 2000;
 export const DRAGONITE_MAX_SPAWN_X = 4000;
 export const DRAGONITE_MIN_SPEED = 5;
