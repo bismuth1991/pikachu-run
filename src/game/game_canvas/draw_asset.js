@@ -43,6 +43,16 @@ export const drawDragonite = (dragonite, ctx) => {
   }
 };
 
+export const drawPrimeape = (primeape, ctx) => {
+  drawAsset(primeape, ctx);
+  primeape.updateFramesPassed();
+
+  if (primeape.framesPassed) {
+    primeape.randomAction();
+    primeape.resetFramesPassed();
+  }
+};
+
 export const drawObstacle = (obstacle, ctx) => {
   drawAsset(obstacle, ctx);
 };

@@ -21,6 +21,14 @@ class Primeape {
     }
   }
 
+  updateFramesPassed() {
+    this.framesPassed += 1;
+  }
+
+  resetFramesPassed() {
+    this.framesPassed = 0;
+  }
+
   run() {
     this.sprite = primeapeRunSprite;
     this.dLeft = PRIMEAPE_SPEED;
