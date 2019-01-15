@@ -9,9 +9,12 @@ export const ENERGY_LOSS = 0.90;
 
 // Pikachu
 export const PIKACHU_HEIGHT = 43;
+export const PIKACHU_WIDTH = 60;
 export const PIKACHU_JUMP_HEIGHT = 65;
 export const PIKACHU_RUN_SPEED = 20;
 export const PIKACHU_MASS = 0.8;
+export const SPAWN_X = CANVAS_WIDTH / 2 - PIKACHU_WIDTH / 2;
+export const SPAWN_Y = CANVAS_HEIGHT / 2 - PIKACHU_HEIGHT / 2 - 30;
 
 // Bubble
 export const NUM_BUBBLES = 30;
@@ -36,7 +39,7 @@ export const SPEAROW_POINTS = -100;
 // Primeape
 export const NUM_PRIMEAPES = 1;
 export const PRIMEAPE_MIN_SPAWN_X = 1000;
-export const PRIMEAPE_MAX_SPAWN_X = 2000;
+export const PRIMEAPE_MAX_SPAWN_X = 1500;
 export const PRIMEAPE_SPEED = 10;
 export const PRIMEAPE_HEIGHT = 66;
 export const PRIMEAPE_POINTS = -300;

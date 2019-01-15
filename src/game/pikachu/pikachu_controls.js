@@ -2,6 +2,10 @@ const setupControlListeners = (game) => {
   window.addEventListener('keydown', ({ key, repeat }) => {
     if (repeat) return;
 
+    if (key === ' ') {
+      game.play();
+    }
+
     const { pikachu } = game.assets;
 
     if (pikachu.isKeyLock) return;
@@ -19,6 +23,9 @@ const setupControlListeners = (game) => {
 
   window.addEventListener('keyup', ({ key }) => {
     const { pikachu } = game.assets;
+
+    if (pikachu.isKeyLock) return;
+
     pikachu.stop(key);
   });
 };

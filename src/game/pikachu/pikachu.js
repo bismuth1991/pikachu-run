@@ -1,9 +1,6 @@
-import Physics from '../utils/physics';
-
 import {
   BASE_Y,
   GRAVITY,
-  PIKACHU_MASS,
   PIKACHU_JUMP_HEIGHT,
   PIKACHU_RUN_SPEED,
   CANVAS_WIDTH,
@@ -15,16 +12,18 @@ import {
   pikachuStaticSprite,
   pikachuRunSprite,
   pikachuTakeDamageSprite,
-} from './pikachu_sprite_sheets';
+  pikachuPhysics,
+} from './pikachu_generator';
 
 class Pikachu {
   constructor() {
-    this.physics = new Physics(0, BASE_Y - PIKACHU_HEIGHT, PIKACHU_MASS);
-    this.sprite = pikachuStaticSprite;
+    this.physics = pikachuPhysics();
+    this.sprite = pikachuRunSprite;
     this.points = 0;
+    this.lifeLeft = 3;
     this.isADPress = false;
     this.isLeft = false;
-    this.isKeyLock = false;
+    this.isKeyLock = true;
   }
 
   addPoints(points) {
@@ -38,6 +37,7 @@ class Pikachu {
   }
 
   takeDamage(knockback = 5) {
+    this.lifeLeft -= 1;
     this.sprite = pikachuTakeDamageSprite;
     this.sprite.isLeft = this.isLeft;
     this.physics.dLeft = 0;
@@ -53,6 +53,12 @@ class Pikachu {
 
     setTimeout(() => { this.sprite = pikachuStaticSprite; this.isKeyLock = false; }, 1000);
     setTimeout(() => { this.isInvincible = false; }, 2000);
+  }
+
+  faint() {
+    this.physics = pikachuPhysics();
+    this.isKeyLock = true;
+    this.sprite = pikachuTakeDamageSprite;
   }
 
   runLeft() {

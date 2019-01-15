@@ -1,6 +1,5 @@
 import GameCanvas from './game/game_canvas/game_canvas';
 import setupControlListeners from './game/pikachu/pikachu_controls';
-import initialAssets from './game/game_canvas/assets';
 
 import {
   CANVAS_WIDTH,
@@ -17,7 +16,8 @@ window.addEventListener('DOMContentLoaded', () => {
   canvas.width = CANVAS_WIDTH;
   canvas.height = CANVAS_HEIGHT;
 
-  const game = new GameCanvas(canvas, ctx, initialAssets);
+  const game = new GameCanvas(canvas, ctx);
+
   game.draw(15);
 
   setupControlListeners(game);
