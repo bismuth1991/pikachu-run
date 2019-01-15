@@ -1,4 +1,4 @@
-import Sprite from '../sprite';
+import Sprite from '../utils/sprite';
 import Meteor from './meteor';
 import dragonitePhysics from './dragonite_generator';
 

@@ -1,4 +1,4 @@
-import { GRAVITY, BASE_Y, ENERGY_LOSS } from './constant';
+import { GRAVITY, BASE_Y, ENERGY_LOSS } from '../constant';
 
 class Physics {
   constructor(x, y, mass) {

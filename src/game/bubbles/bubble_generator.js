@@ -1,4 +1,4 @@
-import Physics from '../physics';
+import Physics from '../utils/physics';
 
 import { randomFromRange } from '../utils/other_utils';
 

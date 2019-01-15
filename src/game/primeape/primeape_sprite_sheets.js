@@ -1,4 +1,4 @@
-import Sprite from '../sprite';
+import Sprite from '../utils/sprite';
 
 const primeapeStaticSpriteSheet = require('../../assets/images/primeape-stand.png');
 const primeapeRunSpriteSheet = require('../../assets/images/primeape-run.png');

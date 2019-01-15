@@ -1,4 +1,4 @@
-import Sprite from '../sprite';
+import Sprite from '../utils/sprite';
 import spearowPhysics from './spearow_generator';
 import { NUM_SPEAROWS } from '../constant';
 
