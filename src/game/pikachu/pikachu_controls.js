@@ -4,6 +4,8 @@ const setupControlListeners = (game) => {
 
     const { pikachu } = game.assets;
 
+    if (pikachu.isKeyLock) return;
+
     if (key === 'w') {
       pikachu.jump();
     }

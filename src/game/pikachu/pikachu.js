@@ -21,9 +21,10 @@ class Pikachu {
   constructor() {
     this.physics = new Physics(0, BASE_Y - PIKACHU_HEIGHT, PIKACHU_MASS);
     this.sprite = pikachuStaticSprite;
+    this.points = 0;
     this.isADPress = false;
     this.isLeft = false;
-    this.points = 0;
+    this.isKeyLock = false;
   }
 
   addPoints(points) {
@@ -41,17 +42,17 @@ class Pikachu {
     this.sprite.isLeft = this.isLeft;
     this.physics.dLeft = 0;
     this.physics.dRight = 0;
+    this.isKeyLock = true;
+    this.isInvincible = true;
+
     if (this.isLeft) {
       this.physics.x += knockback;
     } else {
       this.physics.x -= knockback;
     }
 
-    if (knockback === 5) {
-      setTimeout(() => { this.sprite = pikachuStaticSprite; }, 0);
-    } else {
-      setTimeout(() => { this.sprite = pikachuStaticSprite; }, 1000);
-    }
+    setTimeout(() => { this.sprite = pikachuStaticSprite; this.isKeyLock = false; }, 1000);
+    setTimeout(() => { this.isInvincible = false; }, 2000);
   }
 
   runLeft() {

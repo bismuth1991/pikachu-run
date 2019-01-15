@@ -10,7 +10,7 @@ import {
 const drawDragonite = (dragonite, pikachu, ctx) => {
   drawAsset(dragonite, ctx);
 
-  if (isRRCollided(pikachu, dragonite)) {
+  if (isRRCollided(pikachu, dragonite) && !pikachu.isInvincible) {
     pikachu.takeDamage();
     pikachu.addPoints(DRAGONITE_POINTS);
   }

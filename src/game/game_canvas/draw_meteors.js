@@ -27,7 +27,7 @@ const drawMiniMeteor = (miniMeteor, pikachu, ctx) => {
 };
 
 const drawMeteor = (meteor, pikachu, ctx) => {
-  if (isRCCollided(pikachu, meteor)) {
+  if (isRCCollided(pikachu, meteor) && !pikachu.isInvincible) {
     pikachu.takeDamage();
     pikachu.addPoints(METEOR_POINTS);
   }
