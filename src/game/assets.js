@@ -6,16 +6,12 @@ import Primeape from './primeape/primeape';
 
 const pikachu = new Pikachu();
 
-const obstacles = [
-  ...Spearow.makeSpearows(),
-];
-
 const initialAssets = {
   pikachu,
   dragonites: Dragonite.makeDragonites(),
   primeapes: Primeape.makePrimeapes(),
+  spearows: Spearow.makeSpearows(),
   bubbles: Bubble.makeBubbles(),
-  obstacles,
 };
 
 export default initialAssets;

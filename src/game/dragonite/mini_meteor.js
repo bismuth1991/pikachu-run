@@ -1,16 +1,23 @@
-import { BASE_Y, MINI_METEOR_FRICTION } from '../constant';
-import { randomMiniMeteorPhysics } from './meteor_random_generators';
+import {
+  miniMeteorPhysics,
+  miniMeteorRadius,
+} from './meteor_generators';
+
+import {
+  BASE_Y,
+  MINI_METEOR_FRICTION,
+} from '../constant';
 
 class MiniMeteor {
   constructor(x, y, color) {
-    this.physics = randomMiniMeteorPhysics(x, y);
-    this.radius = 2;
+    this.physics = miniMeteorPhysics(x, y);
+    this.radius = miniMeteorRadius();
     this.color = color;
     this.timeToLive = 50;
   }
 
   isHitGround() {
-    return this.physics.y <= BASE_Y;
+    return this.physics.y + this.radius <= BASE_Y;
   }
 
   bounce() {

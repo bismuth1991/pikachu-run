@@ -1,7 +1,6 @@
 import { isRCCollided, isRRCollided } from '../utils/collision_util';
 import drawBubble from './draw_bubble';
-import { drawPikachu, drawObstacle, drawDragonite, drawPrimeape } from './draw_asset';
-// import drawMeteor from './draw_meteor';
+import { drawPikachu, drawSpearow, drawDragonite, drawPrimeape } from './draw_asset';
 
 class GameCanvas {
   constructor(canvas, ctx, initialAssets) {
@@ -34,8 +33,8 @@ class GameCanvas {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         const assets = Object.values(this.assets);
-        const [pikachu, dragonites, primeapes, bubbles, obstacles] = assets;
-        // debugger;
+        const [pikachu, dragonites, primeapes, spearows, bubbles] = assets;
+
         drawPikachu(pikachu, this.ctx);
 
         for (let i = 0; i < dragonites.length; i += 1) {
@@ -51,14 +50,10 @@ class GameCanvas {
           GameCanvas.checkPikachuBubbleCollision(pikachu, bubbles[i]);
         }
 
-        for (let i = 0; i < obstacles.length; i += 1) {
-          drawObstacle(obstacles[i], this.ctx);
-          GameCanvas.checkPikachuObstacleCollision(pikachu, obstacles[i]);
+        for (let i = 0; i < spearows.length; i += 1) {
+          drawSpearow(spearows[i], this.ctx);
+          GameCanvas.checkPikachuObstacleCollision(pikachu, spearows[i]);
         }
-
-        // for (let i = 0; i < meteors.length; i += 1) {
-        //   drawMeteor(meteors[i], this.ctx);
-        // }
       }
     };
 

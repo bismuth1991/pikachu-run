@@ -1,12 +1,23 @@
-import { randomPhysics, randomRadius, randomMeteorColor } from './meteor_random_generators';
-import { BASE_Y, NUM_METEORS, METEOR_FRICTION, NUM_MINI_METEORS } from '../constant';
 import MiniMeteor from './mini_meteor';
+
+import {
+  meteorPhysics,
+  meteorRadius,
+  meteorColor,
+} from './meteor_generators';
+
+import {
+  BASE_Y,
+  NUM_METEORS,
+  METEOR_FRICTION,
+  NUM_MINI_METEORS,
+} from '../constant';
 
 class Meteor {
   constructor() {
-    this.physics = randomPhysics();
-    this.radius = randomRadius();
-    this.color = randomMeteorColor();
+    this.physics = meteorPhysics();
+    this.radius = meteorRadius();
+    this.color = meteorColor();
 
     this.miniMeteors = [];
   }
@@ -31,6 +42,12 @@ class Meteor {
     this.physics.dRight *= METEOR_FRICTION;
   }
 
+  reset() {
+    this.physics = meteorPhysics();
+    this.radius = meteorRadius();
+    this.color = meteorColor();
+  }
+
   explosion() {
     for (let i = 0; i < NUM_MINI_METEORS; i += 1) {
       this.miniMeteors.push(new MiniMeteor(this.physics.x, this.physics.y, this.color));
@@ -38,12 +55,6 @@ class Meteor {
 
     if (this.radius <= 15) this.reset();
     this.radius -= 5;
-  }
-
-  reset() {
-    this.physics = randomPhysics();
-    this.radius = randomRadius();
-    this.color = randomMeteorColor();
   }
 }
 

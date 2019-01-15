@@ -1,19 +1,31 @@
-import { randomPhysics, randomRadius, randomRotation } from './bubble_random_generators';
-import { MAX_ROTATION, CANVAS_HEIGHT, CANVAS_WIDTH, NUM_BUBBLES } from '../constant';
 import PoppingLine from './popping_line';
+
+import {
+  bubblePhysics,
+  bubbleRadius,
+  bubbleRotation,
+} from './bubble_generators';
+
+import {
+  NUM_BUBBLES,
+  NUM_POPPING_LINES,
+  MAX_ROTATION,
+  CANVAS_HEIGHT,
+  CANVAS_WIDTH,
+} from '../constant';
 
 class Bubble {
   constructor() {
-    this.physics = randomPhysics();
-    this.radius = randomRadius();
+    this.physics = bubblePhysics();
+    this.radius = bubbleRadius();
 
     this.isPop = false;
     this.maxRotation = MAX_ROTATION;
-    this.rotation = randomRotation();
+    this.rotation = bubbleRotation();
     this.rotationDirection = 'forward';
 
     this.lines = [];
-    for (let i = 0; i < 6; i += 1) {
+    for (let i = 0; i < NUM_POPPING_LINES; i += 1) {
       this.lines.push(new PoppingLine(this, i));
     }
   }
@@ -46,12 +58,11 @@ class Bubble {
   }
 
   resetPhysics() {
-    this.physics = randomPhysics();
+    this.physics = bubblePhysics();
   }
 
   isOutOfBounds() {
-    const { x, y } = this.physics;
-    return (x > CANVAS_WIDTH || x < 0 || y > CANVAS_HEIGHT);
+    return (this.x > CANVAS_WIDTH || this.x < 0 || this.y > CANVAS_HEIGHT);
   }
 }
 

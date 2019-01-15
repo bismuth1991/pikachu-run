@@ -21,6 +21,7 @@ export const MAX_ROTATION = 100;
 export const BUBBLE_MIN_SPAWN_X = 0;
 export const BUBBLE_MAX_SPAWN_X = CANVAS_WIDTH;
 export const BUBBLE_SPAWN_Y = -50;
+export const NUM_POPPING_LINES = 6;
 
 // Spearow
 export const NUM_SPEAROWS = 3;
@@ -65,5 +66,5 @@ export const METEOR_COLORS = ['#112F41', '#068587', '#4FB99F', '#F2B134', '#ED55
 export const NUM_MINI_METEORS = 10;
 export const MINI_METEOR_MASS = 0.1;
 export const MINI_METEOR_FRICTION = 0.99;
-export const MINI_METEOR_MIN_RADIUS = 1;
-export const MINI_METEOR_MAX_RADIUS = 5;
+export const MINI_METEOR_MIN_RADIUS = 2;
+export const MINI_METEOR_MAX_RADIUS = 3;

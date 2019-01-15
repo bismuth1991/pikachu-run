@@ -39,7 +39,6 @@ export const drawDragonite = (dragonite, ctx) => {
   }
 
   if (dragonite.isOutOfBounds()) {
-    // dragonite.resetPhysics();
     dragonite.deactivateDracoMeteor();
   }
 };
@@ -54,6 +53,10 @@ export const drawPrimeape = (primeape, ctx) => {
   }
 };
 
-export const drawObstacle = (obstacle, ctx) => {
-  drawAsset(obstacle, ctx);
+export const drawSpearow = (spearow, ctx) => {
+  drawAsset(spearow, ctx);
 };
+
+// export const drawObstacle = (obstacle, ctx) => {
+//   drawAsset(obstacle, ctx);
+// };

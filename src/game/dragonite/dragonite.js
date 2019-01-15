@@ -1,8 +1,17 @@
 import Sprite from '../sprite';
-import dragonitePhysics from './dragonite_random_generators';
-import { NUM_DRAGONITE, DRAGONITE_METEORS_DEACTIVATION_X } from '../constant';
 import Meteor from './meteor';
-import { getCanvasBackground, addFilterInvert, removeFilterInvert } from '../domManipulators';
+import dragonitePhysics from './dragonite_generators';
+
+import {
+  getCanvasBackground,
+  addFilterInvert,
+  removeFilterInvert,
+} from '../domManipulators';
+
+import {
+  NUM_DRAGONITE,
+  DRAGONITE_METEORS_DEACTIVATION_X,
+} from '../constant';
 
 const dragoniteSpriteSheet = require('../../assets/images/dragonite-small.png');
 

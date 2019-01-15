@@ -10,7 +10,7 @@ import {
   BUBBLE_SPAWN_Y,
 } from '../constant';
 
-export const randomPhysics = () => {
+export const bubblePhysics = () => {
   const physics = new Physics(
     randomFromRange(BUBBLE_MIN_SPAWN_X, BUBBLE_MAX_SPAWN_X),
     BUBBLE_SPAWN_Y,
@@ -24,6 +24,6 @@ export const randomPhysics = () => {
   return physics;
 };
 
-export const randomRotation = () => Math.floor(Math.random() * (2 * MAX_ROTATION)) - MAX_ROTATION;
+export const bubbleRotation = () => Math.floor(Math.random() * (2 * MAX_ROTATION)) - MAX_ROTATION;
 
-export const randomRadius = () => randomFromRange(MIN_RADIUS, MAX_RADIUS);
+export const bubbleRadius = () => randomFromRange(MIN_RADIUS, MAX_RADIUS);
