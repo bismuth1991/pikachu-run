@@ -14,6 +14,7 @@ import {
   pikachuRollSprite,
   pikachuStaticSprite,
   pikachuRunSprite,
+  pikachuTakeDamageSprite,
 } from './pikachu_sprite_sheets';
 
 class Pikachu {
@@ -33,6 +34,24 @@ class Pikachu {
     this.sprite = pikachuRollSprite;
     this.sprite.isLeft = this.isLeft;
     this.physics.dUp = PIKACHU_JUMP_HEIGHT;
+  }
+
+  takeDamage(knockback = 5) {
+    this.sprite = pikachuTakeDamageSprite;
+    this.sprite.isLeft = this.isLeft;
+    this.physics.dLeft = 0;
+    this.physics.dRight = 0;
+    if (this.isLeft) {
+      this.physics.x += knockback;
+    } else {
+      this.physics.x -= knockback;
+    }
+
+    if (knockback === 5) {
+      setTimeout(() => { this.sprite = pikachuStaticSprite; }, 0);
+    } else {
+      setTimeout(() => { this.sprite = pikachuStaticSprite; }, 1000);
+    }
   }
 
   runLeft() {

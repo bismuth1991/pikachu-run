@@ -10,7 +10,10 @@ import {
 const drawDragonite = (dragonite, pikachu, ctx) => {
   drawAsset(dragonite, ctx);
 
-  if (isRRCollided(pikachu, dragonite)) pikachu.addPoints(DRAGONITE_POINTS);
+  if (isRRCollided(pikachu, dragonite)) {
+    pikachu.takeDamage();
+    pikachu.addPoints(DRAGONITE_POINTS);
+  }
 
   if (dragonite.physics.x < DRAGONITE_METEORS_ACTIVATION_X && !dragonite.isMeteorsActivate) {
     dragonite.activateDracoMeteor();

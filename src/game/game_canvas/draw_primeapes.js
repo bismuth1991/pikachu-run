@@ -9,7 +9,10 @@ import {
 const drawPrimeape = (primeape, pikachu, ctx) => {
   drawAsset(primeape, ctx);
 
-  if (isRRCollided(pikachu, primeape)) pikachu.addPoints(PRIMEAPE_POINTS);
+  if (isRRCollided(pikachu, primeape)) {
+    pikachu.takeDamage(35);
+    pikachu.addPoints(PRIMEAPE_POINTS);
+  }
 
   primeape.updateFramesPassed();
 

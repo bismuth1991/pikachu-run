@@ -3,7 +3,11 @@ import { isRRCollided } from '../utils/collision_util';
 import { SPEAROW_POINTS } from '../constant';
 
 const drawSpearow = (spearow, pikachu, ctx) => {
-  if (isRRCollided(pikachu, spearow)) pikachu.addPoints(SPEAROW_POINTS);
+  if (isRRCollided(pikachu, spearow)) {
+    pikachu.takeDamage();
+    pikachu.addPoints(SPEAROW_POINTS);
+  }
+
   drawAsset(spearow, ctx);
 };
 
