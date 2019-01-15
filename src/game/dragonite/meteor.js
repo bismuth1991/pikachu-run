@@ -21,7 +21,7 @@ class Meteor {
   }
 
   isHitGround() {
-    return this.physics.y > BASE_Y;
+    return this.physics.y + this.radius > BASE_Y;
   }
 
   bounce() {
