@@ -16,6 +16,8 @@ const drawMiniMeteor = (miniMeteor, ctx) => {
 
   ctx.restore();
 
+  if (miniMeteor.isHitGround()) miniMeteor.bounce();
+
   miniMeteor.physics.updatePos();
 };
 
