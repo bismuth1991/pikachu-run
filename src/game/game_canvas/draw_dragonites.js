@@ -1,6 +1,6 @@
 import { isRRCollided } from '../utils/collision_util';
 import { drawAsset } from './draw_asset';
-import drawMeteor from './draw_meteor';
+import drawMeteor from './draw_meteors';
 
 import {
   DRAGONITE_METEORS_ACTIVATION_X,

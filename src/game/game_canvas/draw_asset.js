@@ -1,6 +1,3 @@
-import { DRAGONITE_METEORS_ACTIVATION_X } from '../constant';
-import drawMeteor from './draw_meteor';
-
 export const drawAsset = (asset, ctx) => {
   if (asset.isOutOfBounds()) asset.resetPhysics();
 
@@ -23,36 +20,4 @@ export const drawAsset = (asset, ctx) => {
 export const drawPikachu = (pikachu, ctx) => {
   pikachu.stayOnGround();
   drawAsset(pikachu, ctx);
-};
-
-export const drawDragonite = (dragonite, ctx) => {
-  drawAsset(dragonite, ctx);
-
-  if (dragonite.physics.x < DRAGONITE_METEORS_ACTIVATION_X && !dragonite.isMeteorsActivate) {
-    dragonite.activateDracoMeteor();
-  }
-
-  if (dragonite.meteors.length > 0) {
-    for (let i = 0; i < dragonite.meteors.length; i += 1) {
-      drawMeteor(dragonite.meteors[i], ctx);
-    }
-  }
-
-  if (dragonite.isOutOfBounds()) {
-    dragonite.deactivateDracoMeteor();
-  }
-};
-
-export const drawPrimeape = (primeape, ctx) => {
-  drawAsset(primeape, ctx);
-  primeape.updateFramesPassed();
-
-  if (primeape.framesPassed > 20) {
-    primeape.randomAction();
-    primeape.resetFramesPassed();
-  }
-};
-
-export const drawSpearow = (spearow, ctx) => {
-  drawAsset(spearow, ctx);
 };

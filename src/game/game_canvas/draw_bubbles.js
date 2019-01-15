@@ -1,3 +1,6 @@
+import { isRCCollided } from '../utils/collision_util';
+import { BUBBLE_POINTS } from '../constant';
+
 const drawPoppingLine = (line, ctx) => {
   line.getValues();
 
@@ -13,7 +16,12 @@ const drawPoppingLine = (line, ctx) => {
   line.updateValues();
 };
 
-const drawBubble = (bubble, ctx) => {
+const drawBubble = (bubble, pikachu, ctx) => {
+  if (isRCCollided(pikachu, bubble, ctx)) {
+    bubble.pop();
+    pikachu.addPoints(BUBBLE_POINTS);
+  }
+
   bubble.rotate();
 
   if (!bubble.isPop) {
@@ -43,4 +51,10 @@ const drawBubble = (bubble, ctx) => {
   bubble.physics.updatePos();
 };
 
-export default drawBubble;
+const drawBubbles = (bubbles, pikachu, ctx) => {
+  for (let i = 0; i < bubbles.length; i += 1) {
+    drawBubble(bubbles[i], pikachu, ctx);
+  }
+};
+
+export default drawBubbles;
