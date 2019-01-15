@@ -1,7 +1,7 @@
 import {
   miniMeteorPhysics,
   miniMeteorRadius,
-} from './meteor_generators';
+} from './meteor_generator';
 
 import {
   BASE_Y,
@@ -26,10 +26,6 @@ class MiniMeteor {
     this.physics.dLeft *= MINI_METEOR_FRICTION;
     this.physics.dRight *= MINI_METEOR_FRICTION;
   }
-
-  // fade() {
-
-  // }
 }
 
 export default MiniMeteor;

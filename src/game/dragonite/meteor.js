@@ -4,7 +4,7 @@ import {
   meteorPhysics,
   meteorRadius,
   meteorColor,
-} from './meteor_generators';
+} from './meteor_generator';
 
 import {
   BASE_Y,

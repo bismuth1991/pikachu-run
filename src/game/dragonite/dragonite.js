@@ -1,6 +1,6 @@
 import Sprite from '../sprite';
 import Meteor from './meteor';
-import dragonitePhysics from './dragonite_generators';
+import dragonitePhysics from './dragonite_generator';
 
 import {
   getCanvasBackground,

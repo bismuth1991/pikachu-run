@@ -1,6 +1,6 @@
 import Pikachu from './pikachu/pikachu';
 import Bubble from './bubbles/bubble';
-import Spearow from './obstacles/spearow';
+import Spearow from './spearow/spearow';
 import Dragonite from './dragonite/dragonite';
 import Primeape from './primeape/primeape';
 

@@ -1,7 +1,7 @@
 import { DRAGONITE_METEORS_ACTIVATION_X } from '../constant';
 import drawMeteor from './draw_meteor';
 
-const drawAsset = (asset, ctx) => {
+export const drawAsset = (asset, ctx) => {
   if (asset.isOutOfBounds()) asset.resetPhysics();
 
   const { physics, sprite } = asset;
@@ -56,7 +56,3 @@ export const drawPrimeape = (primeape, ctx) => {
 export const drawSpearow = (spearow, ctx) => {
   drawAsset(spearow, ctx);
 };
-
-// export const drawObstacle = (obstacle, ctx) => {
-//   drawAsset(obstacle, ctx);
-// };

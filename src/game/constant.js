@@ -49,6 +49,7 @@ export const DRAGONITE_MIN_SPEED = 5;
 export const DRAGONITE_MAX_SPEED = 10;
 export const DRAGONITE_METEORS_ACTIVATION_X = CANVAS_WIDTH - 200;
 export const DRAGONITE_METEORS_DEACTIVATION_X = -200;
+export const DRAGONITE_POINTS = -1000;
 
 // Meteor
 export const NUM_METEORS = 10;

@@ -4,7 +4,7 @@ import {
   bubblePhysics,
   bubbleRadius,
   bubbleRotation,
-} from './bubble_generators';
+} from './bubble_generator';
 
 import {
   NUM_BUBBLES,

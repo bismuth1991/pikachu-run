@@ -22,6 +22,11 @@ class Pikachu {
     this.sprite = pikachuStaticSprite;
     this.isADPress = false;
     this.isLeft = false;
+    this.points = 0;
+  }
+
+  addPoints(points) {
+    this.points += points;
   }
 
   jump() {
