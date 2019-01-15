@@ -1,8 +1,9 @@
 import { isRCCollided, isRRCollided } from '../utils/collision_util';
 import drawBubble from './draw_bubble';
-import { drawPikachu, drawSpearow, drawPrimeape } from './draw_asset';
+import { drawPikachu, drawSpearow } from './draw_asset';
 import drawPoints from './draw_points';
 import drawDragonites from './draw_dragonites';
+import drawPrimeapes from './draw_primeapes';
 
 class GameCanvas {
   constructor(canvas, ctx, initialAssets) {
@@ -45,12 +46,10 @@ class GameCanvas {
         const [pikachu, dragonites, primeapes, spearows, bubbles] = assets;
 
         drawDragonites(dragonites, pikachu, this.ctx);
+        drawPrimeapes(primeapes, pikachu, this.ctx);
 
         drawPikachu(pikachu, this.ctx);
 
-        for (let i = 0; i < primeapes.length; i += 1) {
-          drawPrimeape(primeapes[i], this.ctx);
-        }
 
         for (let i = 0; i < bubbles.length; i += 1) {
           drawBubble(bubbles[i], this.ctx);

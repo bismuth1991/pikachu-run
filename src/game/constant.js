@@ -40,6 +40,7 @@ export const PRIMEAPE_MAX_SPAWN_X = 2000;
 export const PRIMEAPE_SPEED = 10;
 export const PRIMEAPE_HEIGHT = 66;
 export const PRIMEAPE_POINTS = -300;
+export const PRIMEAPE_FRAMES_TILL_NEXT_ACTION = 20;
 
 
 // Dragonite
