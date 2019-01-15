@@ -29,6 +29,13 @@ export const SPEAROW_MIN_SPAWN_X = 1000;
 export const SPEAROW_MAX_SPAWN_X = 2000;
 export const SPEAROW_SPEED = 15;
 
+// Primeape
+export const NUM_PRIMEAPE = 1;
+export const PRIMEAPE_MIN_SPAWN_X = 1000;
+export const PRIMEAPE_MAX_SPAWN_X = 2000;
+export const PRIMEAPE_SPEED = 10;
+
+
 // Dragonite
 export const NUM_DRAGONITE = 1;
 export const DRAGONITE_MIN_SPAWN_Y = 20;

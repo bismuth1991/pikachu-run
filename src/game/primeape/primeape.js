@@ -3,6 +3,7 @@ import {
   primeapeRunSprite,
   primeapePunchSprite,
 } from './primeape_sprite_sheets';
+import { PRIMEAPE_SPEED } from '../constant';
 
 class Primeape {
   constructor() {
