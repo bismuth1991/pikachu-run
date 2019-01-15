@@ -14,7 +14,7 @@ export const PIKACHU_RUN_SPEED = 20;
 export const PIKACHU_MASS = 0.8;
 
 // Bubble
-export const NUM_BUBBLES = 20;
+export const NUM_BUBBLES = 30;
 export const MIN_RADIUS = 10;
 export const MAX_RADIUS = 20;
 export const MAX_ROTATION = 100;
@@ -22,6 +22,7 @@ export const BUBBLE_MIN_SPAWN_X = 0;
 export const BUBBLE_MAX_SPAWN_X = CANVAS_WIDTH;
 export const BUBBLE_SPAWN_Y = -50;
 export const NUM_POPPING_LINES = 6;
+export const BUBBLE_POINTS = 50;
 
 // Spearow
 export const NUM_SPEAROWS = 5;
@@ -30,6 +31,7 @@ export const SPEAROW_MAX_SPAWN_Y = 270;
 export const SPEAROW_MIN_SPAWN_X = 1000;
 export const SPEAROW_MAX_SPAWN_X = 4000;
 export const SPEAROW_SPEED = 15;
+export const SPEAROW_POINTS = -100;
 
 // Primeape
 export const NUM_PRIMEAPES = 1;
@@ -37,6 +39,7 @@ export const PRIMEAPE_MIN_SPAWN_X = 1000;
 export const PRIMEAPE_MAX_SPAWN_X = 2000;
 export const PRIMEAPE_SPEED = 10;
 export const PRIMEAPE_HEIGHT = 66;
+export const PRIMEAPE_POINTS = -300;
 
 
 // Dragonite
@@ -61,6 +64,7 @@ export const METEOR_MIN_SPAWN_X = 0;
 export const METEOR_MAX_SPAWN_X = CANVAS_WIDTH;
 export const METEOR_MIN_SPAWN_Y = -100;
 export const METEOR_MAX_SPAWN_Y = -300;
+export const METEOR_POINTS = -500;
 export const METEOR_COLORS = ['#112F41', '#068587', '#4FB99F', '#F2B134', '#ED553B'];
 
 // Mini-meteor
@@ -69,3 +73,4 @@ export const MINI_METEOR_MASS = 0.1;
 export const MINI_METEOR_FRICTION = 0.99;
 export const MINI_METEOR_MIN_RADIUS = 2;
 export const MINI_METEOR_MAX_RADIUS = 3;
+export const MINI_METEOR_POINTS = 50;

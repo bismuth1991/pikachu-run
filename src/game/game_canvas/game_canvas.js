@@ -1,6 +1,6 @@
 import { isRCCollided, isRRCollided } from '../utils/collision_util';
 import drawBubble from './draw_bubble';
-import { drawPikachu, drawSpearow, drawDragonite, drawPrimeape } from './draw_asset';
+import { drawPikachu, drawSpearow, drawPrimeape } from './draw_asset';
 import drawPoints from './draw_points';
 import drawDragonites from './draw_dragonites';
 

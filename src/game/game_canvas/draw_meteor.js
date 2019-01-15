@@ -1,4 +1,9 @@
-const drawMiniMeteor = (miniMeteor, ctx) => {
+import { isRCCollided } from '../utils/collision_util';
+import { METEOR_POINTS, MINI_METEOR_POINTS } from '../constant';
+
+const drawMiniMeteor = (miniMeteor, pikachu, ctx) => {
+  if (isRCCollided(pikachu, miniMeteor)) pikachu.addPoints(MINI_METEOR_POINTS);
+
   ctx.save();
   ctx.translate(miniMeteor.physics.x, miniMeteor.physics.y);
 
@@ -21,7 +26,9 @@ const drawMiniMeteor = (miniMeteor, ctx) => {
   miniMeteor.physics.updatePos();
 };
 
-const drawMeteor = (meteor, ctx) => {
+const drawMeteor = (meteor, pikachu, ctx) => {
+  if (isRCCollided(pikachu, meteor)) pikachu.addPoints(METEOR_POINTS);
+
   ctx.save();
   ctx.translate(meteor.physics.x, meteor.physics.y);
 
@@ -42,7 +49,7 @@ const drawMeteor = (meteor, ctx) => {
   if (meteor.miniMeteors.length > 0) {
     for (let i = 0; i < meteor.miniMeteors.length; i += 1) {
       const miniMeteor = meteor.miniMeteors[i];
-      drawMiniMeteor(miniMeteor, ctx);
+      drawMiniMeteor(miniMeteor, pikachu, ctx);
 
       miniMeteor.timeToLive -= 1;
       if (miniMeteor.timeToLive <= 0) {

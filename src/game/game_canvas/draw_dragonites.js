@@ -18,7 +18,7 @@ const drawDragonite = (dragonite, pikachu, ctx) => {
 
   if (dragonite.meteors.length > 0) {
     for (let i = 0; i < dragonite.meteors.length; i += 1) {
-      drawMeteor(dragonite.meteors[i], ctx);
+      drawMeteor(dragonite.meteors[i], pikachu, ctx);
     }
   }
 
