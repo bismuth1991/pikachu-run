@@ -1,5 +1,5 @@
 export const GRAVITY = 5;
-export const BASE_Y = 348;
+export const BASE_Y = 389;
 
 export const CANVAS_HEIGHT = 500;
 export const CANVAS_WIDTH = 800;
@@ -7,9 +7,10 @@ export const CANVAS_WIDTH = 800;
 export const IGNORE_GRAVITY = 0;
 
 // Pikachu
-export const PIKACHU_JUMP_HEIGHT = 55;
+export const PIKACHU_HEIGHT = 43;
+export const PIKACHU_JUMP_HEIGHT = 65;
 export const PIKACHU_RUN_SPEED = 20;
-export const PIKACHU_MASS = 1;
+export const PIKACHU_MASS = 0.8;
 export const ENERGY_LOSS = 0.85;
 
 // Bubble
@@ -34,6 +35,7 @@ export const NUM_PRIMEAPES = 1;
 export const PRIMEAPE_MIN_SPAWN_X = 1000;
 export const PRIMEAPE_MAX_SPAWN_X = 2000;
 export const PRIMEAPE_SPEED = 10;
+export const PRIMEAPE_HEIGHT = 66;
 
 
 // Dragonite

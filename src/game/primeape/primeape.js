@@ -3,14 +3,14 @@ import {
   primeapeRunSprite,
   primeapePunchSprite,
 } from './primeape_sprite_sheets';
-import primeapePhysics from './primeape_generator';
 import { PRIMEAPE_SPEED, NUM_PRIMEAPES } from '../constant';
 import { randomFromRange } from '../utils/other_utils';
+import primeapePhysics from './primeape_generator';
 
 class Primeape {
   constructor() {
     this.physics = primeapePhysics();
-    this.sprite = primeapeStaticSprite;
+    this.sprite = primeapeRunSprite;
     this.framesPassed = 0;
   }
 
@@ -19,6 +19,7 @@ class Primeape {
     for (let i = 0; i < NUM_PRIMEAPES; i += 1) {
       primeapes.push(new Primeape());
     }
+    return primeapes;
   }
 
   updateFramesPassed() {
@@ -31,34 +32,34 @@ class Primeape {
 
   run() {
     this.sprite = primeapeRunSprite;
-    this.dLeft = PRIMEAPE_SPEED;
+    this.physics.dLeft = PRIMEAPE_SPEED;
   }
 
   stop() {
     this.sprite = primeapeStaticSprite;
-    this.dLeft = 0;
+    this.physics.dLeft = 0;
   }
 
   punch() {
     this.sprite = primeapePunchSprite;
-    this.dLeft = 0;
+    this.physics.dLeft = 0;
   }
 
   randomAction() {
-    const randomNumer = randomFromRange(1, 3);
-    if (randomNumer === '1') {
+    const randomNumber = randomFromRange(1, 3);
+    if (randomNumber === 1) {
       this.stop();
     }
-    if (randomNumer === '2') {
+    if (randomNumber === 2) {
       this.run();
     }
-    if (randomNumer === '3') {
+    if (randomNumber === 3) {
       this.punch();
     }
   }
 
   isOutOfBounds() {
-    return this.physics + this.sprite.width < 0;
+    return this.physics.x + this.sprite.width < 0;
   }
 
   resetPhysics() {

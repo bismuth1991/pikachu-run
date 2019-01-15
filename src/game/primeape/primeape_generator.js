@@ -6,12 +6,14 @@ import {
   BASE_Y,
   IGNORE_GRAVITY,
   PRIMEAPE_SPEED,
+  PRIMEAPE_HEIGHT,
 } from '../constant';
 
 const primeapePhysics = () => {
   const physics = new Physics(
-    randomFromRange(PRIMEAPE_MIN_SPAWN_X, PRIMEAPE_MAX_SPAWN_X),
-    BASE_Y,
+    // randomFromRange(PRIMEAPE_MIN_SPAWN_X, PRIMEAPE_MAX_SPAWN_X),
+    randomFromRange(800, 800),
+    BASE_Y - PRIMEAPE_HEIGHT,
     IGNORE_GRAVITY,
   );
 
@@ -20,4 +22,4 @@ const primeapePhysics = () => {
   return physics;
 };
 
-export default primeapePhysics();
+export default primeapePhysics;

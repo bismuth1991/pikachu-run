@@ -1,5 +1,13 @@
 import Physics from '../physics';
-import { BASE_Y, PIKACHU_MASS, PIKACHU_JUMP_HEIGHT, PIKACHU_RUN_SPEED, CANVAS_WIDTH } from '../constant';
+import {
+  BASE_Y,
+  GRAVITY,
+  PIKACHU_MASS,
+  PIKACHU_JUMP_HEIGHT,
+  PIKACHU_RUN_SPEED,
+  CANVAS_WIDTH,
+  PIKACHU_HEIGHT,
+} from '../constant';
 
 import {
   pikachuRollSprite,
@@ -9,7 +17,7 @@ import {
 
 class Pikachu {
   constructor() {
-    this.physics = new Physics(0, BASE_Y, PIKACHU_MASS);
+    this.physics = new Physics(0, BASE_Y - PIKACHU_HEIGHT, PIKACHU_MASS);
     this.sprite = pikachuStaticSprite;
     this.isADPress = false;
     this.isLeft = false;
@@ -51,6 +59,15 @@ class Pikachu {
     if (this.physics.dX() === 0) {
       this.sprite = pikachuStaticSprite;
       this.sprite.isLeft = this.isLeft;
+    }
+  }
+
+  stayOnGround() {
+    const { physics } = this;
+    if (physics.y + physics.dY() + GRAVITY * physics.mass > BASE_Y - PIKACHU_HEIGHT) {
+      physics.y = BASE_Y - PIKACHU_HEIGHT;
+      physics.dDown = 0;
+      physics.dUp = 0;
     }
   }
 

@@ -21,6 +21,7 @@ const drawAsset = (asset, ctx) => {
 };
 
 export const drawPikachu = (pikachu, ctx) => {
+  pikachu.stayOnGround();
   drawAsset(pikachu, ctx);
 };
 
@@ -47,7 +48,7 @@ export const drawPrimeape = (primeape, ctx) => {
   drawAsset(primeape, ctx);
   primeape.updateFramesPassed();
 
-  if (primeape.framesPassed) {
+  if (primeape.framesPassed > 20) {
     primeape.randomAction();
     primeape.resetFramesPassed();
   }

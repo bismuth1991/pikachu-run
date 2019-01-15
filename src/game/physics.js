@@ -20,21 +20,13 @@ class Physics {
   }
 
   updatePos() {
-    this.x += this.dX();
-
-    // if (this.dUp > 0) {
     if (this.y < BASE_Y) {
       this.dUp *= ENERGY_LOSS;
       this.dDown += GRAVITY * this.mass;
     }
 
-    if (this.y + this.dY() + GRAVITY * this.mass > BASE_Y && this.mass === PIKACHU_MASS) {
-      this.y = BASE_Y;
-      this.dDown = 0;
-      this.dUp = 0;
-    } else {
-      this.y += this.dY();
-    }
+    this.x += this.dX();
+    this.y += this.dY();
   }
 }
 
