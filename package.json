@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx parcel ./src/index.html",
-    "build": "npx parcel build ./src/index.html --out-dir docs --public-url ./",
+    "build": "npx parcel build ./src/index.html --out-dir docs --public-url https://bismuth1991.github.io/pikachu-run/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
